@@ -48,25 +48,23 @@ class LunaHandler(BaseHTTPRequestHandler):
         else:
             self.send_response(404)
             self.end_headers()
+def responder(self, pergunta):
+    pergunta = pergunta.lower().strip()
 
-    def responder(self, pergunta):
-        pergunta = pergunta.lower().strip()
-        palavras = pergunta.split()
+    for linha in BASE:
+        if "=" not in linha:
+            continue
 
-        for linha in BASE:
-            score = sum(1 for p in palavras if p in linha.lower())
-            if score >= 2:
-                return linha
+        chave, resposta = linha.split("=", 1)
 
-        # Salva perguntas não respondidas
-        try:
-            with open(NAO_RESPONDIDAS, "a", encoding="utf-8") as f:
-                f.write(pergunta + "\n")
-        except:
-            pass
+        if pergunta == chave.lower().strip():
+            return resposta.strip()
 
-        return "Ainda não tenho essa resposta. Posso consultar e te responder depois."
+    with open(NAO_RESPONDIDAS, "a", encoding="utf-8") as f:
+        f.write(pergunta + "\n")
 
+    return "Ainda não tenho essa resposta. Posso consultar e te responder depois."
+    
     # Evita logs poluídos no Render
     def log_message(self, format, *args):
         return
@@ -81,4 +79,5 @@ def iniciar():
 
 if __name__ == "__main__":
     iniciar()
+
 
