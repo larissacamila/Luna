@@ -1,1 +1,1 @@
-# dependencias nativas do python
+# dependências nativas
