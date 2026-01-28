@@ -3,11 +3,10 @@ import json
 import os
 import urllib.parse
 
-# ===== CONFIGURAÇÕES =====
 PASTA_CONHECIMENTO = "conhecimento"
 NAO_RESPONDIDAS = "nao_respondidas.txt"
 
-# ===== CARREGAR BASE =====
+
 def carregar_base():
     base = []
     if not os.path.exists(PASTA_CONHECIMENTO):
@@ -23,9 +22,10 @@ def carregar_base():
                         base.append(linha)
     return base
 
+
 BASE = carregar_base()
 
-# ===== HANDLER HTTP =====
+
 class LunaHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
@@ -41,44 +41,43 @@ class LunaHandler(BaseHTTPRequestHandler):
             self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
 
-            self.wfile.write(json.dumps({
-                "pergunta": pergunta,
-                "resposta": resposta
-            }, ensure_ascii=False).encode("utf-8"))
+            self.wfile.write(
+                json.dumps(
+                    {
+                        "pergunta": pergunta,
+                        "resposta": resposta
+                    },
+                    ensure_ascii=False
+                ).encode("utf-8")
+            )
         else:
             self.send_response(404)
             self.end_headers()
+
     def responder(self, pergunta):
         pergunta = pergunta.lower().strip()
+        palavras = pergunta.split()
 
         for linha in BASE:
-            if "=" not in linha:
-                continue
-
-            chave, resposta = linha.split("=", 1)
-
-            if pergunta == chave.lower().strip():
-                return resposta.strip()
+            score = sum(1 for p in palavras if p in linha.lower())
+            if score >= 2:
+                # Estrutura: pergunta=resposta
+                if "=" in linha:
+                    return linha.split("=", 1)[1].strip()
+                return linha
 
         with open(NAO_RESPONDIDAS, "a", encoding="utf-8") as f:
             f.write(pergunta + "\n")
 
         return "Ainda não tenho essa resposta. Posso consultar e te responder depois."
-    
-             # Evita logs poluídos no Render
-     def log_message(self, format, *args):
-            return
 
-# ===== INICIAR SERVIDOR =====
 
 def iniciar():
-    porta = int(os.environ.get("PORT", 8000))
-    server = HTTPServer(("0.0.0.0", porta), LunaHandler)
-    print(f"🌙 Luna API rodando na porta {porta}")
+    port = int(os.environ.get("PORT", 8000))
+    server = HTTPServer(("0.0.0.0", port), LunaHandler)
+    print(f"🌙 Luna API rodando na porta {port}")
     server.serve_forever()
+
 
 if __name__ == "__main__":
     iniciar()
-
-
-
