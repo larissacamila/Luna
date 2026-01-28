@@ -70,11 +70,11 @@ class LunaHandler(BaseHTTPRequestHandler):
             return
 
 # ===== INICIAR SERVIDOR =====
+
 def iniciar():
-    import os
-    PORT = int(os.environ.get("PORT", 8000))
-    server = HTTPServer(("0.0.0.0", PORT), LunaHandler)
-    print(f"🌙 Luna API rodando na porta {PORT}")
+    porta = int(os.environ.get("PORT", 8000))
+    server = HTTPServer(("0.0.0.0", porta), LunaHandler)
+    print(f"🌙 Luna API rodando na porta {porta}")
     server.serve_forever()
 
 if __name__ == "__main__":
