@@ -1,1 +1,4 @@
-# dependências nativas
+numpy
+flask
+flask-cors
+scikit-learn
