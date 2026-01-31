@@ -1,83 +1,66 @@
-from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
-import os
-import urllib.parse
+import random
+from flask import Flask, request, jsonify
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+#from flask_cors import CORS
+app = Flask(__name__)
+#CORS(app)
 
-PASTA_CONHECIMENTO = "conhecimento"
-NAO_RESPONDIDAS = "nao_respondidas.txt"
+# Carregar intents
+with open("intents.json", "r", encoding="utf-8") as file:
+    data = json.load(file)
 
+patterns = []
+tags = []
+responses = {}
 
-def carregar_base():
-    base = []
-    if not os.path.exists(PASTA_CONHECIMENTO):
-        os.makedirs(PASTA_CONHECIMENTO)
+for intent in data["intents"]:
+    for pattern in intent["patterns"]:
+        patterns.append(pattern.lower())
+        tags.append(intent["tag"])
+    responses[intent["tag"]] = intent["responses"]
 
-    for arquivo in os.listdir(PASTA_CONHECIMENTO):
-        if arquivo.endswith(".txt"):
-            caminho = os.path.join(PASTA_CONHECIMENTO, arquivo)
-            with open(caminho, "r", encoding="utf-8") as f:
-                for linha in f:
-                    linha = linha.strip()
-                    if linha:
-                        base.append(linha)
-    return base
+# Vetorização
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(patterns)
 
+def get_response(user_input):
+    user_input = user_input.lower()
+    user_vec = vectorizer.transform([user_input])
 
-BASE = carregar_base()
+    similarities = cosine_similarity(user_vec, X)
+    best_match = similarities.argmax()
+    confidence = similarities[0][best_match]
+    fallbacks = [
+        "🌙 Não entendi muito bem sua pergunta. Você pode me dar mais detalhes?",
+        "🌙 Pode explicar um pouco melhor?",
+        "🌙 Acho que perdi alguma coisa 😅 pode reformular?",
+        "🌙 Me conta com outras palavras?"
+    ]
 
+    if confidence < 0.3:
+        return random.choice(fallbacks)
+   
+    tag = tags[best_match]
+    return random.choice(responses[tag])
 
-class LunaHandler(BaseHTTPRequestHandler):
+@app.route("/chat", methods=["POST"])
+def chat():
+    data = request.get_json()
+    user_message = data.get("message", "")
+    response = get_response(user_message)
+    return jsonify({"response": response})
 
-    def do_GET(self):
-        if self.path.startswith("/perguntar"):
-            query = urllib.parse.urlparse(self.path).query
-            params = urllib.parse.parse_qs(query)
-            pergunta = params.get("q", [""])[0]
+@app.route("/test")
+def test():
+    msg = request.args.get("msg", "")
+    resposta = get_response(msg)
+    return f"<h2>Luna:</h2><p>{resposta}</p>"
+from flask import send_from_directory
 
-            resposta = self.responder(pergunta)
-
-            self.send_response(200)
-            self.send_header("Content-type", "application/json; charset=utf-8")
-            self.send_header("Access-Control-Allow-Origin", "*")
-            self.end_headers()
-
-            self.wfile.write(
-                json.dumps(
-                    {
-                        "pergunta": pergunta,
-                        "resposta": resposta
-                    },
-                    ensure_ascii=False
-                ).encode("utf-8")
-            )
-        else:
-            self.send_response(404)
-            self.end_headers()
-
-    def responder(self, pergunta):
-        pergunta = pergunta.lower().strip()
-        palavras = pergunta.split()
-
-        for linha in BASE:
-            score = sum(1 for p in palavras if p in linha.lower())
-            if score >= 2:
-                # Estrutura: pergunta=resposta
-                if "=" in linha:
-                    return linha.split("=", 1)[1].strip()
-                return linha
-
-        with open(NAO_RESPONDIDAS, "a", encoding="utf-8") as f:
-            f.write(pergunta + "\n")
-
-        return "Ainda não tenho essa resposta. Posso consultar e te responder depois."
-
-
-def iniciar():
-    port = int(os.environ.get("PORT", 8000))
-    server = HTTPServer(("0.0.0.0", port), LunaHandler)
-    print(f"🌙 Luna API rodando na porta {port}")
-    server.serve_forever()
-
-
+@app.route("/")
+def index():
+    return send_from_directory(".", "index.html")
 if __name__ == "__main__":
-    iniciar()
+    app.run(host="0.0.0.0", port=5000)
