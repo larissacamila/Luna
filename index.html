@@ -108,49 +108,52 @@
     <input type="text" id="userInput" placeholder="Escreva algo...">
     <button onclick="enviar()">Enviar</button>
   </div>
+<script>
+  const API_URL = "https://luna-ad4s.onrender.com/chat";
 
-  <script>
-    // ⚠️ GitHub Pages NÃO acessa localhost
-    // Isso só funciona se a API estiver no mesmo PC
-    //const API_URL = "http://localhost:8000/perguntar";
-    //const API_URL = "https://luna-1-efac.onrender.com/perguntar";
-    const API_URL = "https://luna-ad4s.onrender.com/chat"
-    //const API_URL = "https://luna-ad4s.onrender.com/perguntar";
-    const chatWindow = document.getElementById("chatWindow");
-    const userInput = document.getElementById("userInput");
+  const chatWindow = document.getElementById("chatWindow");
+  const userInput = document.getElementById("userInput");
 
-    function addMessage(text, sender) {
-      const msgDiv = document.createElement("div");
-      msgDiv.classList.add("message", sender);
-      msgDiv.textContent = text;
-      chatWindow.appendChild(msgDiv);
-      chatWindow.scrollTop = chatWindow.scrollHeight;
+  function addMessage(text, sender) {
+    const msgDiv = document.createElement("div");
+    msgDiv.classList.add("message", sender);
+    msgDiv.textContent = text;
+    chatWindow.appendChild(msgDiv);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  }
+
+  async function enviar() {
+    const pergunta = userInput.value.trim();
+    if (!pergunta) return;
+
+    addMessage("Você: " + pergunta, "user");
+    userInput.value = "";
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: pergunta
+        })
+      });
+
+      const data = await response.json();
+      addMessage("Luna: " + (data.response || "🌙 Não entendi 😢"), "luna");
+
+    } catch (e) {
+      addMessage("Luna: 🌙 A conexão com a API não está disponível.", "luna");
+      console.error(e);
     }
+  }
 
-    async function enviar() {
-      const pergunta = userInput.value.trim();
-      if (!pergunta) return;
+  userInput.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") enviar();
+  });
+</script>
 
-      addMessage("Você: " + pergunta, "user");
-      userInput.value = "";
-
-      try {
-        const url = `${API_URL}?q=${encodeURIComponent(pergunta)}`;
-        const resposta = await fetch(url)
-          .then(res => res.json())
-          .then(data => data.resposta || "🌙 Luna não soube responder.");
-
-        addMessage("Luna: " + resposta, "luna");
-      } catch (e) {
-        addMessage("Luna: 🌙 A conexão com a API não está disponível.", "luna");
-        console.error(e);
-      }
-    }
-
-    userInput.addEventListener("keydown", function(e) {
-      if (e.key === "Enter") enviar();
-    });
-  </script>
 
 </body>
 </html>
