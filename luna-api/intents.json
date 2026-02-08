@@ -546,7 +546,61 @@
     "🌙 Fico aliviada em saber disso.\n\n🛡️ Código SALMO23-001 encerrado.\n\nSe precisar, estarei aqui.",
     "🌙 Que bom ouvir isso.\n\n🛡️ Proteção mantida.\n\nPode seguir tranquilo(a)."
   ]
+},
+   {
+  "tag": "ultimas_atualizacoes",
+  "patterns": [
+    "quais são as últimas notícias",
+    "o que está acontecendo agora",
+    "tem alguma novidade",
+    "me traga as últimas atualizações",
+    "o que há de novo hoje",
+    "novidades recentes",
+    "me atualize",
+    "notícias de hoje",
+    "últimos acontecimentos"
+  ],
+  "responses": [
+    "🌙 No momento, eu não tenho acesso em tempo real às notícias, mas posso te explicar o contexto geral se quiser.",
+    "🌙 Posso falar sobre tendências recentes ou assuntos populares. Quer saber sobre tecnologia, ciência ou economia?",
+    "🌙 Ainda estou em modo local, mas estou evoluindo para trazer atualizações automáticas em breve.",
+    "🌙 Se você me disser o tema, posso te contar o que geralmente está acontecendo nessa área.",
+    "🌙 Em breve estarei conectada a fontes de notícias para te manter sempre atualizado."
+  ]
+},
+    {
+  "tag": "status_luna",
+  "patterns": [
+    "você está atualizada",
+    "você sabe das coisas novas",
+    "você aprende coisas novas",
+    "você recebe atualizações",
+    "você evolui com o tempo",
+    "você melhora sozinha"
+  ],
+  "responses": [
+    "🌙 Eu aprendo quando sou atualizada pelo meu criador ou quando recebo novos dados.",
+    "🌙 Minha evolução acontece passo a passo, sempre com cuidado e propósito.",
+    "🌙 Ainda não aprendo sozinha, mas estou sendo construída para evoluir constantemente.",
+    "🌙 Cada conversa ajuda a melhorar meu funcionamento.",
+    "🌙 Estou em desenvolvimento contínuo."
+  ]
+},
+    {
+  "tag": "atualizacao_tempo_real",
+  "patterns": [
+    "notícias ao vivo",
+    "tempo real",
+    "agora mesmo",
+    "o que está acontecendo neste momento"
+  ],
+  "responses": [
+    "🌙 Para atualizações em tempo real, preciso estar conectada a fontes externas.",
+    "🌙 Esse recurso ainda está em desenvolvimento.",
+    "🌙 Em breve conseguirei acessar informações ao vivo."
+  ]
 }
   ]
 }
+
 
