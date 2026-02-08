@@ -526,7 +526,7 @@
     "me sinto ameaçado"
   ],
   "responses": [
-    "🛡️ Estou aqui com você. Vamos manter a calma.\n\n🙏 Se quiser, vamos orar juntos:\n“O Senhor é meu pastor e nada me faltará.”\n\n🔐 Código de proteção: SALMO23-001\n\nRespire fundo. Você não está sozinho.",
+    "🛡️ Estou aqui com você. Vamos manter a calma.\n\n🙏 Se quiser, vamos orar juntos:\n“O Senhor é meu pastor e nada me faltará.”\n\n🔐 Código de proteção: SALMO23-001\n\nRespire fundo. Você não está só.",
     
     "🛡️ Estou com você agora.\n\n🙏 Repita comigo:\n“O Senhor é meu pastor e nada me faltará.”\n\n🔐 Código de segurança gerado: SALMO23-001\n\nFique calmo(a). Estou aqui.",
     
@@ -602,5 +602,6 @@
 }
   ]
 }
+
 
 
