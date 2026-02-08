@@ -28,15 +28,14 @@
       padding: 10px;
       display: flex;
       flex-direction: column;
-      height: 520px;
+      height: 540px;
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
 
-    /* Avatar */
     .avatar {
       display: flex;
       justify-content: center;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .avatar img {
@@ -45,7 +44,6 @@
       border-radius: 50%;
       border: 3px solid #ffcc66;
       object-fit: cover;
-      background-color: #000;
     }
 
     .chat-window {
@@ -54,7 +52,7 @@
       padding: 8px;
       border-radius: 6px;
       background-color: #1f1f2d;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .message {
@@ -62,30 +60,29 @@
       line-height: 1.4;
     }
 
-    .user {
-      color: #9acdff;
-    }
+    .user { color: #9acdff; }
+    .luna { color: #ffcc66; }
 
-    .luna {
-      color: #ffcc66;
-    }
-
-    input[type="text"] {
+    input {
       width: 100%;
       padding: 9px;
       border-radius: 6px;
       border: none;
       outline: none;
-      box-sizing: border-box;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 6px;
     }
 
     button {
+      flex: 1;
       padding: 9px;
       border: none;
       border-radius: 6px;
       background-color: #ffcc66;
-      color: #000;
       font-weight: bold;
       cursor: pointer;
     }
@@ -93,35 +90,93 @@
     button:hover {
       background-color: #e6b24d;
     }
+
+    .mic {
+      background-color: #6cf;
+    }
   </style>
 </head>
+
 <body>
 
-  <div class="chat-container">
+<div class="chat-container">
 
-    <div class="avatar">
-      <img src="assets/imagens/luna/logoluna.jpg" alt="Luna">
-    </div>
-
-    <div class="chat-window" id="chatWindow"></div>
-
-    <input type="text" id="userInput" placeholder="Escreva algo...">
-    <button onclick="enviar()">Enviar</button>
+  <div class="avatar">
+    <img src="assets/imagens/luna/logoluna.jpg" alt="Luna">
   </div>
+
+  <div class="chat-window" id="chatWindow"></div>
+
+  <input type="text" id="userInput" placeholder="Escreva ou fale algo...">
+
+  <div class="buttons">
+    <button onclick="enviar()">Enviar</button>
+    <button class="mic" onclick="ouvir()">🎤</button>
+  </div>
+
+</div>
+
 <script>
   const API_URL = "https://luna-ad4s.onrender.com/chat";
 
   const chatWindow = document.getElementById("chatWindow");
   const userInput = document.getElementById("userInput");
 
+  let vozSelecionada = null;
+
   function addMessage(text, sender) {
-    const msgDiv = document.createElement("div");
-    msgDiv.classList.add("message", sender);
-    msgDiv.textContent = text;
-    chatWindow.appendChild(msgDiv);
+    const div = document.createElement("div");
+    div.className = "message " + sender;
+    div.textContent = text;
+    chatWindow.appendChild(div);
     chatWindow.scrollTop = chatWindow.scrollHeight;
   }
 
+  // 😀 Remove emojis (para a fala)
+  function removerEmojis(texto) {
+    return texto.replace(
+      /[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu,
+      ""
+    ).trim();
+  }
+
+  // 🎧 Carrega vozes do sistema
+  function carregarVozes() {
+    const vozes = speechSynthesis.getVoices();
+
+    vozSelecionada = vozes.find(v =>
+      v.lang === "pt-BR" &&
+      (
+        v.name.toLowerCase().includes("fem") ||
+        v.name.toLowerCase().includes("female") ||
+        v.name.toLowerCase().includes("mulher")
+      )
+    );
+
+    if (!vozSelecionada) {
+      vozSelecionada = vozes.find(v => v.lang === "pt-BR") || vozes[0];
+    }
+  }
+
+  speechSynthesis.onvoiceschanged = carregarVozes;
+
+  // 🔊 Falar
+  function falar(texto) {
+    if (!vozSelecionada) carregarVozes();
+
+    const textoLimpo = removerEmojis(texto);
+
+    const fala = new SpeechSynthesisUtterance(textoLimpo);
+    fala.voice = vozSelecionada;
+    fala.lang = "pt-BR";
+    fala.rate = 1;
+    fala.pitch = 1.2;
+
+    speechSynthesis.cancel();
+    speechSynthesis.speak(fala);
+  }
+
+  // 📤 Enviar mensagem
   async function enviar() {
     const pergunta = userInput.value.trim();
     if (!pergunta) return;
@@ -132,28 +187,43 @@
     try {
       const response = await fetch(API_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          message: pergunta
-        })
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: pergunta })
       });
 
       const data = await response.json();
-      addMessage("Luna: " + (data.response || "🌙 Não entendi 😢"), "luna");
+      const resposta = data.response || "Não entendi.";
+
+      addMessage("Luna: " + resposta, "luna");
+      falar(resposta);
 
     } catch (e) {
-      addMessage("Luna: 🌙 A conexão com a API não está disponível.", "luna");
-      console.error(e);
+      addMessage("Luna: Erro de conexão 😢", "luna");
     }
   }
 
-  userInput.addEventListener("keydown", function(e) {
+  // 🎤 Microfone
+  function ouvir() {
+    if (!("webkitSpeechRecognition" in window)) {
+      alert("Reconhecimento de voz não suportado.");
+      return;
+    }
+
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = "pt-BR";
+    recognition.start();
+
+    recognition.onresult = (event) => {
+      const texto = event.results[0][0].transcript;
+      userInput.value = texto;
+      enviar();
+    };
+  }
+
+  userInput.addEventListener("keydown", e => {
     if (e.key === "Enter") enviar();
   });
 </script>
-
 
 </body>
 </html>
