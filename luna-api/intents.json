@@ -648,8 +648,62 @@
   "protocol LUZ_ON"
   ]
 }
+[
+  {
+    "tag": "rotina_manha",
+    "patterns": ["começar minha manhã", "iniciar rotina matinal", "boa manhã"],
+    "responses": ["🌞 Rotina matinal iniciada! Preparando tudo para você ☕"]
+  },
+  {
+    "tag": "rotina_cafe",
+    "patterns": ["faça meu café", "prepare café", "quero café"],
+    "responses": ["☕ Iniciando café… a caminho! 🚀"]
+  },
+  {
+    "tag": "rotina_dormir",
+    "patterns": ["hora de dormir", "iniciar rotina noturna", "boa noite"],
+    "responses": ["🌙 Rotina noturna ativada. Boa noite! 😴"]
+  },
+  {
+    "tag": "rotina_alerta",
+    "patterns": ["me avisar sobre reunião", "alerta reunião", "lembrar compromisso"],
+    "responses": ["🔔 Alerta configurado! Reunião lembrada ✅"]
+  },
+  {
+    "tag": "rotina_musica",
+    "patterns": ["tocar música", "playlist matinal", "começar música"],
+    "responses": ["🎵 Música iniciada! Hora de som ambiente 🎶"]
+  },
+  {
+    "tag": "rotina_clima",
+    "patterns": ["previsão do tempo", "como está o clima", "clima hoje"],
+    "responses": ["☀️ O dia está ensolarado! Ou 🌧️ prepare o guarda-chuva, pode chover!"]
+  },
+  {
+    "tag": "rotina_limpeza",
+    "patterns": ["iniciar limpeza", "aspirador ligado", "robot de limpeza"],
+    "responses": ["🧹 Limpeza iniciada! Robô a caminho 🤖"]
+  },
+  {
+    "tag": "rotina_erro",
+    "patterns": ["ligar tudo", "iniciar rotina grande", "erro rotina"],
+    "responses": ["🐛 Ops, bug detectado! Tentando reiniciar 🔄"]
+  },
+  {
+    "tag": "rotina_foto",
+    "patterns": ["tirar foto", "selfie", "fotografar"],
+    "responses": ["📸 Foto tirada! Clique registrado 😎"]
+  },
+  {
+    "tag": "rotina_relatorio",
+    "patterns": ["gerar relatório", "relatório diário", "mostrar dados"],
+    "responses": ["📊 Relatório pronto! Resumo diário gerado ✅"]
+  }
+]
+    
   ]
 }
+
 
 
 
