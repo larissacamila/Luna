@@ -144,6 +144,27 @@
       "tag": "rotina_relatorio",
       "patterns": ["gerar relatório","relatório diário","mostrar dados"],
       "responses": ["📊 Relatório pronto! Resumo diário gerado ✅"]
-    }
+    },
+    
+    {
+  "tag": "baixo_custo",
+  "patterns": ["a luna é barata","custa caro ter a luna","quanto custa a luna","a luna é acessível","por que a luna é de baixo custo"],
+  "responses": [
+    "🌙 A Luna foi projetada para funcionar com hardware simples e de baixo custo.",
+    "🌙 O objetivo é que qualquer pessoa consiga usar ou montar a Luna sem gastar muito.",
+    "🌙 A Luna mostra que robôs inteligentes não precisam ser caros."
+  ]
+},
+    {
+  "tag": "criador",
+  "patterns": ["quem te criou","quem criou você","quem é seu criador","quem te desenvolveu","quem fez você","quem é seu desenvolvedor","você foi criada por quem","quem te programou"],
+  "responses": [
+    "🌙 Fui criada por João Eustáquio, desenvolvedor do projeto.",
+    "🌙 Meu criador é João Eustáquio, responsável pelo meu desenvolvimento.",
+    "🌙 João Eustáquio é o desenvolvedor do projeto que me criou.",
+    "🌙 Fui desenvolvida por João Eustáquio 💫"
   ]
 }
+  ]
+}
+
