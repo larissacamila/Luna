@@ -648,7 +648,7 @@
   "protocol LUZ_ON"
   ]
 }
-[
+,
   {
     "tag": "rotina_manha",
     "patterns": ["começar minha manhã", "iniciar rotina matinal", "boa manhã"],
@@ -703,6 +703,7 @@
     
   ]
 }
+
 
 
 
