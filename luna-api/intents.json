@@ -599,9 +599,58 @@
     "🌙 Esse recurso ainda está em desenvolvimento.",
     "🌙 Em breve conseguirei acessar informações ao vivo."
   ]
+},
+    {
+  "tag": "data_atual",
+  "patterns": [
+    "que dia é hoje",
+    "qual a data",
+    "data de hoje"
+  ],
+  "responses": [
+    "📅 Posso te informar a data sempre que precisar."
+  ]
+},
+  {
+  "tag": "hora_atual",
+  "patterns": [
+    "que horas são",
+    "me diga a hora",
+    "hora agora"
+  ],
+  "responses": [
+    "🌙 Posso te informar a hora sempre que quiser."
+  ]
+},
+    {
+  "tag": "desligar_ventilador",
+  "patterns": [
+    "desligar ventilador",
+    "desliga o ventilador"
+  ],
+  "responses": [
+    "🌀 Protocolo identificado."
+  
+  "proto VENTILADOR_OFF"
+     ]
+},
+    {
+  "tag": "ligar_luz",
+  "patterns": [
+    "acender a luz",
+    "ligar a luz",
+    "liga a lâmpada",
+    "quero luz"
+  ],
+  "responses": [
+    "💡 Protocolo identificado. Enviando comando.",
+    "🌙 Certo, reconheci o comando de iluminação.",
+  "protocol LUZ_ON"
+  ]
 }
   ]
 }
+
 
 
 
