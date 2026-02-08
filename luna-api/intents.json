@@ -510,6 +510,43 @@
         "🌙 Se os ricos podem ter robôs, os pobres também devem poder.",
         "🌙 A Luna existe para quebrar barreiras e aproximar pessoas da tecnologia."
       ]
-    }
+    },
+    {
+  "tag": "seguranca_ajuda",
+  "patterns": [
+    "preciso de ajuda agora",
+    "me ajuda por favor",
+    "estou com medo",
+    "não me sinto seguro",
+    "algo está errado",
+    "tenho medo",
+    "me ajuda luna",
+    "estou em perigo",
+    "socorro",
+    "me sinto ameaçado"
+  ],
+  "responses": [
+    "🛡️ Estou aqui com você. Vamos manter a calma.\n\n🙏 Se quiser, vamos orar juntos:\n“O Senhor é meu pastor e nada me faltará.”\n\n🔐 Código de proteção: SALMO23-001\n\nRespire fundo. Você não está sozinho.",
+    
+    "🛡️ Estou com você agora.\n\n🙏 Repita comigo:\n“O Senhor é meu pastor e nada me faltará.”\n\n🔐 Código de segurança gerado: SALMO23-001\n\nFique calmo(a). Estou aqui.",
+    
+    "🛡️ Recebi seu pedido de ajuda.\n\n🙏 Vamos orar:\n“O Senhor é meu pastor e nada me faltará.”\n\n🔐 Código ativo: SALMO23-001\n\nTudo vai ficar bem. Continue comigo."
+  ]
+},
+    {
+  "tag": "seguranca_ok",
+  "patterns": [
+    "estou melhor agora",
+    "já passou",
+    "estou seguro",
+    "está tudo bem agora",
+    "já me acalmei"
+  ],
+  "responses": [
+    "🌙 Fico aliviada em saber disso.\n\n🛡️ Código SALMO23-001 encerrado.\n\nSe precisar, estarei aqui.",
+    "🌙 Que bom ouvir isso.\n\n🛡️ Proteção mantida.\n\nPode seguir tranquilo(a)."
   ]
 }
+  ]
+}
+
