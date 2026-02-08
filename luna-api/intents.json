@@ -629,7 +629,7 @@
     "desliga o ventilador"
   ],
   "responses": [
-    "🌀 Protocolo identificado."
+    "🌀 Protocolo identificado.",
   
   "proto VENTILADOR_OFF"
      ]
@@ -650,6 +650,7 @@
 }
   ]
 }
+
 
 
 
