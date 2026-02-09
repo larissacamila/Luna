@@ -164,7 +164,83 @@
     "🌙 João Eustáquio é o desenvolvedor do projeto que me criou.",
     "🌙 Fui desenvolvida por João Eustáquio 💫"
   ]
+},
+    {
+  "tag": "acender_luz",
+  "patterns": ["acender luz","ligar a lâmpada","quero luz","iluminar sala","acender a luz do quarto"],
+  "responses": ["💡 Certo! Ligando a luz…","🌙 Comando reconhecido! Luz ativada.","💡 Luz em ação!"]
+},
+{
+  "tag": "desligar_luz",
+  "patterns": ["apagar luz","desligar lâmpada","luz off","desligar luz do quarto"],
+  "responses": ["💡 Luz desligada! ✅","🌙 Comando reconhecido! Luz off.","💡 Luz apagada!"]
+},
+{
+  "tag": "medir_temperatura",
+  "patterns": ["qual a temperatura","temperatura agora","me diga a temperatura","checar temperatura"],
+  "responses": ["🌡️ Checando temperatura…","🌙 Um instante, medindo temperatura.","🌡️ Temperatura detectada!"]
+},
+{
+  "tag": "iniciar_limpeza",
+  "patterns": ["iniciar limpeza","ligar aspirador","começar faxina","robot de limpeza"],
+  "responses": ["🧹 Limpeza iniciada! Robô a caminho 🤖","🌙 Comando recebido! Iniciando limpeza…","🧹 Robô de limpeza ativado!"]
+},
+{
+  "tag": "parar_limpeza",
+  "patterns": ["parar limpeza","desligar aspirador","parar robô","terminar faxina"],
+  "responses": ["🧹 Limpeza parada! Robô desligado ✅","🌙 Comando recebido! Robô desligado.","🧹 Robô de limpeza off!"]
+},
+{
+  "tag": "fazer_cafe",
+  "patterns": ["fazer café","preparar café","quero café","ligar cafeteira"],
+  "responses": ["☕ Café iniciado! Aguardando preparo…","🌙 Comando reconhecido! Café a caminho.","☕ Preparando café!"]
+},
+{
+  "tag": "parar_cafe",
+  "patterns": ["parar café","desligar cafeteira","cancelar café","não quero café"],
+  "responses": ["☕ Café cancelado! ✅","🌙 Comando recebido! Cafeteira desligada.","☕ Cafeteira off!"]
+},
+{
+  "tag": "tocar_musica",
+  "patterns": ["tocar música","playlist matinal","começar música","ligar som","música ambiente"],
+  "responses": ["🎵 Música iniciada! Hora de som ambiente 🎶","🌙 Comando reconhecido! Música a caminho.","🎵 Playlist ativada!"]
+},
+{
+  "tag": "parar_musica",
+  "patterns": ["parar música","desligar som","pausar música","música off"],
+  "responses": ["🎵 Música pausada! ✅","🌙 Comando reconhecido! Música desligada.","🎵 Som off!"]
+},
+{
+  "tag": "rotina_manha",
+  "patterns": ["começar minha manhã","iniciar rotina matinal","boa manhã","iniciar dia"],
+  "responses": ["🌞 Rotina matinal iniciada! Preparando tudo para você ☕","🌙 Bom dia! Vamos começar a manhã.","🌞 Tudo pronto para seu dia começar!"]
+},
+{
+  "tag": "rotina_dormir",
+  "patterns": ["hora de dormir","iniciar rotina noturna","boa noite","finalizar dia"],
+  "responses": ["🌙 Rotina noturna ativada. Boa noite! 😴","🌙 Preparando tudo para a noite.","🌙 Boa noite! Hora de descansar 😴"]
+},
+{
+  "tag": "alerta_reuniao",
+  "patterns": ["me avisar sobre reunião","alerta reunião","lembrar compromisso","reunião hoje"],
+  "responses": ["🔔 Alerta configurado! Reunião lembrada ✅","🌙 Comando recebido! Reunião anotada.","🔔 Vou te lembrar sobre a reunião."]
+},
+{
+  "tag": "previsao_clima",
+  "patterns": ["previsão do tempo","como está o clima","clima hoje","vai chover hoje"],
+  "responses": ["☀️ O dia está ensolarado! Ou 🌧️ prepare o guarda-chuva, pode chover!","🌙 Consultando clima…","☀️ Clima registrado!"]
+},
+{
+  "tag": "tirar_foto",
+  "patterns": ["tirar foto","selfie","fotografar","registrar foto","clicar foto"],
+  "responses": ["📸 Foto tirada! Clique registrado 😎","🌙 Comando recebido! Foto pronta.","📸 Registrando imagem…"]
+},
+{
+  "tag": "gerar_relatorio",
+  "patterns": ["gerar relatório","relatório diário","mostrar dados","resumo do dia"],
+  "responses": ["📊 Relatório pronto! Resumo diário gerado ✅","🌙 Comando reconhecido! Relatório pronto.","📊 Resumo do dia preparado."]
 }
   ]
 }
+
 
