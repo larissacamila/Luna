@@ -312,9 +312,26 @@
     "O funcionamento do L01 é dividido em etapas: captura de áudio, envio para processamento externo, retorno de comando operacional e execução da tarefa solicitada.",
     "O L01 não processa linguagem localmente. Toda a interpretação ocorre na API, e o dispositivo apenas executa comandos válidos e confirma a ação."
   ]
+},
+    {
+  "tag": "onde_comprar_l01",
+  "patterns": [
+    "onde comprar o L01",
+    "como comprar o L01",
+    "onde posso adquirir o L01",
+    "quero comprar o L01",
+    "como faço para comprar o L01",
+    "onde encontro o L01"
+  ],
+  "responses": [
+    "O L01 pode ser adquirido através das Lojas Luna, no local X ou pelos canais oficiais da Luna. Para mais informações sobre disponibilidade e versões, consulte os meios oficiais.",
+    "A venda do L01 é realizada pelas Lojas Luna. Você pode adquirir o dispositivo no local X ou pelos canais oficiais da Luna.",
+    "Para comprar o L01, acesse as Lojas Luna ou procure pelos pontos de venda oficiais autorizados no local X."
+  ]
 }
   ]
 }
+
 
 
 
