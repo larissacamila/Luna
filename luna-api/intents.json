@@ -281,9 +281,26 @@
     "🌙 Sou a responsável pelas rotinas e tarefas do lar. Limpeza, alertas, luzes, café, música… tudo sob meu controle.",
     "🌙 Minha função é manter a casa organizada e as tarefas em ordem. Conversa é secundária; eficiência é minha prioridade."
   ]
+},
+    {
+  "tag": "sobre_l01",
+  "patterns": [
+    "me fale sobre o L01",
+    "o que é o L01",
+    "quem é o L01",
+    "explique o L01",
+    "para que serve o L01",
+    "como funciona o L01"
+  ],
+  "responses": [
+    "O L01 é um protótipo de agente por voz. Ele ouve comandos, envia o áudio para uma API, recebe uma decisão e executa tarefas físicas como ligar ou desligar dispositivos. Ele não conversa, ele age.",
+    "O L01 funciona captando voz, enviando o áudio para processamento externo e executando comandos operacionais. Ele foi projetado para automação e controle, não para diálogo.",
+    "O L01 é um módulo de execução por voz. Sua função é ouvir, obedecer comandos válidos e confirmar ações, como ligar objetos ou verificar estados."
+  ]
 }
   ]
 }
+
 
 
 
