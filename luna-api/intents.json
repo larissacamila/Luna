@@ -297,9 +297,25 @@
     "O L01 funciona captando voz, enviando o áudio para processamento externo e executando comandos operacionais. Ele foi projetado para automação e controle, não para diálogo.",
     "O L01 é um módulo de execução por voz. Sua função é ouvir, obedecer comandos válidos e confirmar ações, como ligar objetos ou verificar estados."
   ]
+},
+    {
+  "tag": "funcionamento_l01",
+  "patterns": [
+    "como o L01 funciona",
+    "como funciona o L01",
+    "explique o funcionamento do L01",
+    "me explique como o L01 funciona",
+    "qual é o funcionamento do L01"
+  ],
+  "responses": [
+    "O L01 funciona captando comandos de voz, enviando o áudio para uma API externa, recebendo uma decisão em forma de comando e executando ações físicas. Após a execução, ele pode emitir uma resposta sonora de confirmação.",
+    "O funcionamento do L01 é dividido em etapas: captura de áudio, envio para processamento externo, retorno de comando operacional e execução da tarefa solicitada.",
+    "O L01 não processa linguagem localmente. Toda a interpretação ocorre na API, e o dispositivo apenas executa comandos válidos e confirma a ação."
+  ]
 }
   ]
 }
+
 
 
 
