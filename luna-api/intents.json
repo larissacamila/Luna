@@ -329,7 +329,8 @@
     "Para comprar o L01, acesse as Lojas Luna ou procure pelos pontos de venda oficiais autorizados no local X."
   ]
 },
-    {
+
+{
   "intents": [
     {
       "tag": "pino1_on",
@@ -367,19 +368,15 @@
       "responses": ["ligar pino 4"]
     },
     {
-  "intents": [
-    {
-      "tag": "pino4_on",
-      "patterns": ["ligar pino 4", "acender pino 4"],
-      "responses": ["ligar pino 4"]
-    },
-    {
       "tag": "pino4_off",
       "patterns": ["desligar pino 4", "apagar pino 4"],
       "responses": ["desligar pino 4"]
     }
   ]
 }
+
+
+
 
 
 
