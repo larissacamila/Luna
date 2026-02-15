@@ -329,7 +329,6 @@
     "Para comprar o L01, acesse as Lojas Luna ou procure pelos pontos de venda oficiais autorizados no local X."
   ]
 },
-
 {
   "intents": [
     {
@@ -374,15 +373,3 @@
     }
   ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
