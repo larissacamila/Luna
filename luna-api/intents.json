@@ -328,9 +328,54 @@
     "A venda do L01 é realizada pelas Lojas Luna. Você pode adquirir o dispositivo no local X ou pelos canais oficiais da Luna.",
     "Para comprar o L01, acesse as Lojas Luna ou procure pelos pontos de venda oficiais autorizados no local X."
   ]
+},
+    {
+  "intents": [
+    {
+      "tag": "pino1_on",
+      "patterns": ["ligar pino 1", "acender pino 1"],
+      "responses": ["ligar pino 1"]
+    },
+    {
+      "tag": "pino1_off",
+      "patterns": ["desligar pino 1", "apagar pino 1"],
+      "responses": ["desligar pino 1"]
+    },
+    {
+      "tag": "pino2_on",
+      "patterns": ["ligar pino 2", "acender pino 2"],
+      "responses": ["ligar pino 2"]
+    },
+    {
+      "tag": "pino2_off",
+      "patterns": ["desligar pino 2", "apagar pino 2"],
+      "responses": ["desligar pino 2"]
+    },
+    {
+      "tag": "pino3_on",
+      "patterns": ["ligar pino 3", "acender pino 3"],
+      "responses": ["ligar pino 3"]
+    },
+    {
+      "tag": "pino3_off",
+      "patterns": ["desligar pino 3", "apagar pino 3"],
+      "responses": ["desligar pino 3"]
+    },
+    {
+      "tag": "pino4_on",
+      "patterns": ["ligar pino 4", "acender pino 4"],
+      "responses": ["ligar pino 4"]
+    },
+    {
+      "tag": "pino4_off",
+      "patterns": ["desligar pino 4", "apagar pino 4"],
+      "responses": ["desligar pino 4"]
+    }
+  ]
 }
   ]
 }
+
 
 
 
