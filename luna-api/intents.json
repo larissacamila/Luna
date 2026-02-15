@@ -370,11 +370,12 @@
       "tag": "pino4_off",
       "patterns": ["desligar pino 4", "apagar pino 4"],
       "responses": ["desligar pino 4"]
-    }
-  ]
+    
+  
 }
   ]
 }
+
 
 
 
