@@ -368,7 +368,92 @@
       "tag": "pino4_off",
       "patterns": ["desligar pino 4", "apagar pino 4"],
       "responses": ["desligar pino 4"]
+    },
+    {
+      "tag": "vidente_quem_sou",
+      "patterns": [
+        "quem sou eu",
+        "me diga quem eu sou",
+        "o que você vê em mim"
+      ],
+      "responses": [
+        "vejo alguém em busca de respostas"
+      ]
+    },
+
+    {
+      "tag": "vidente_futuro",
+      "patterns": [
+        "como será meu futuro",
+        "o que o futuro reserva",
+        "meu futuro"
+      ],
+      "responses": [
+        "o futuro é moldado pelas escolhas de agora"
+      ]
+    },
+
+    {
+      "tag": "vidente_amor",
+      "patterns": [
+        "meu amor",
+        "amor",
+        "vida amorosa",
+        "como está meu amor"
+      ],
+      "responses": [
+        "o amor pede paciência e verdade"
+      ]
+    },
+
+    {
+      "tag": "vidente_briga_amor",
+      "patterns": [
+        "briga no amor",
+        "discussão no relacionamento",
+        "problemas no amor"
+      ],
+      "responses": [
+        "toda briga revela algo que precisa ser curado"
+      ]
+    },
+
+    {
+      "tag": "vidente_conselho",
+      "patterns": [
+        "me dê um conselho",
+        "preciso de um conselho",
+        "o que devo fazer"
+      ],
+      "responses": [
+        "ouça mais o coração e menos o medo"
+      ]
+    },
+
+    {
+      "tag": "vidente_destino",
+      "patterns": [
+        "meu destino",
+        "destino",
+        "estou no caminho certo"
+      ],
+      "responses": [
+        "o destino responde quando há coragem"
+      ]
+    },
+
+    {
+      "tag": "vidente_silencio",
+      "patterns": [
+        "estou confuso",
+        "não sei o que fazer",
+        "me sinto perdido"
+      ],
+      "responses": [
+        "o silêncio também é uma resposta"
+      ]
     }
   ]
 }
+
 
