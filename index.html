@@ -20,13 +20,47 @@
       margin: 0;
     }
 
+    /* LOGIN */
+    .login-container {
+      width: 320px;
+      background-color: rgba(42, 42, 61, 0.95);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      text-align: center;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 9px;
+      border-radius: 6px;
+      border: none;
+      margin-bottom: 8px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 9px;
+      border-radius: 6px;
+      border: none;
+      background-color: #ffcc66;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .erro {
+      color: #ff6b6b;
+      font-size: 0.9em;
+    }
+
+    /* CHAT (seu código original) */
     .chat-container {
+      display: none;
       width: 360px;
       max-width: 95%;
       background-color: rgba(42, 42, 61, 0.92);
       border-radius: 12px;
       padding: 10px;
-      display: flex;
       flex-direction: column;
       height: 540px;
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
@@ -99,7 +133,16 @@
 
 <body>
 
-<div class="chat-container">
+<!-- LOGIN -->
+<div class="login-container" id="loginBox">
+  <h3>🔒 Acesso Luna</h3>
+  <input type="password" id="senha" placeholder="Digite a senha">
+  <button onclick="login()">Entrar</button>
+  <div class="erro" id="erro"></div>
+</div>
+
+<!-- CHAT -->
+<div class="chat-container" id="chatBox">
 
   <div class="avatar">
     <img src="assets/imagens/luna/logoluna.jpg" alt="Luna">
@@ -117,7 +160,21 @@
 </div>
 
 <script>
+  const CHAT_PASSWORD = "1234"; // 🔑 MUDE AQUI
   const API_URL = "https://luna-ad4s.onrender.com/chat";
+
+  const loginBox = document.getElementById("loginBox");
+  const chatBox = document.getElementById("chatBox");
+  const erro = document.getElementById("erro");
+
+  function login() {
+    if (document.getElementById("senha").value === CHAT_PASSWORD) {
+      loginBox.style.display = "none";
+      chatBox.style.display = "flex";
+    } else {
+      erro.textContent = "Senha incorreta";
+    }
+  }
 
   const chatWindow = document.getElementById("chatWindow");
   const userInput = document.getElementById("userInput");
@@ -132,51 +189,26 @@
     chatWindow.scrollTop = chatWindow.scrollHeight;
   }
 
-  // 😀 Remove emojis (para a fala)
   function removerEmojis(texto) {
-    return texto.replace(
-      /[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu,
-      ""
-    ).trim();
+    return texto.replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu,"").trim();
   }
 
-  // 🎧 Carrega vozes do sistema
   function carregarVozes() {
     const vozes = speechSynthesis.getVoices();
-
-    vozSelecionada = vozes.find(v =>
-      v.lang === "pt-BR" &&
-      (
-        v.name.toLowerCase().includes("fem") ||
-        v.name.toLowerCase().includes("female") ||
-        v.name.toLowerCase().includes("mulher")
-      )
-    );
-
-    if (!vozSelecionada) {
-      vozSelecionada = vozes.find(v => v.lang === "pt-BR") || vozes[0];
-    }
+    vozSelecionada = vozes.find(v => v.lang === "pt-BR") || vozes[0];
   }
 
   speechSynthesis.onvoiceschanged = carregarVozes;
 
-  // 🔊 Falar
   function falar(texto) {
     if (!vozSelecionada) carregarVozes();
-
-    const textoLimpo = removerEmojis(texto);
-
-    const fala = new SpeechSynthesisUtterance(textoLimpo);
-    fala.voice = vozSelecionada;
+    const fala = new SpeechSynthesisUtterance(removerEmojis(texto));
     fala.lang = "pt-BR";
-    fala.rate = 1;
     fala.pitch = 1.2;
-
     speechSynthesis.cancel();
     speechSynthesis.speak(fala);
   }
 
-  // 📤 Enviar mensagem
   async function enviar() {
     const pergunta = userInput.value.trim();
     if (!pergunta) return;
@@ -193,29 +225,25 @@
 
       const data = await response.json();
       const resposta = data.response || "Não entendi.";
-
       addMessage("Luna: " + resposta, "luna");
       falar(resposta);
 
-    } catch (e) {
+    } catch {
       addMessage("Luna: Erro de conexão 😢", "luna");
     }
   }
 
-  // 🎤 Microfone
   function ouvir() {
     if (!("webkitSpeechRecognition" in window)) {
       alert("Reconhecimento de voz não suportado.");
       return;
     }
 
-    const recognition = new webkitSpeechRecognition();
-    recognition.lang = "pt-BR";
-    recognition.start();
-
-    recognition.onresult = (event) => {
-      const texto = event.results[0][0].transcript;
-      userInput.value = texto;
+    const r = new webkitSpeechRecognition();
+    r.lang = "pt-BR";
+    r.start();
+    r.onresult = e => {
+      userInput.value = e.results[0][0].transcript;
       enviar();
     };
   }
