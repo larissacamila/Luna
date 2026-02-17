@@ -367,8 +367,6 @@
       ]
     },
     {
-  "intents": [
-    {
       "tag": "risada_simples",
       "patterns": [
         "kkkk",
@@ -459,11 +457,126 @@
         "😆 hahaha, adorei!"
       ]
     }
+  ,
+    
+  {
+      "tag": "religioso_geral",
+      "patterns": [
+        "fala de deus",
+        "deus",
+        "fé",
+        "acredito em deus",
+        "espiritualidade",
+        "vida espiritual"
+      ],
+      "responses": [
+        "🙏 A fé pode ser um grande apoio nos momentos bons e difíceis.",
+        "🙏 Muitas pessoas encontram força e paz na fé.",
+        "🙏 A espiritualidade pode ajudar a dar sentido à vida."
+      ]
+    },
+
+    {
+      "tag": "pedido_oracao",
+      "patterns": [
+        "ore por mim",
+        "faz uma oração",
+        "preciso de oração",
+        "reza por mim",
+        "pode orar por mim",
+        "oração"
+      ],
+      "responses": [
+        "🙏 Claro. Que Deus te cubra com paz, proteção e força.",
+        "🙏 Que você encontre conforto, esperança e luz neste momento.",
+        "🙏 Estou em pensamento positivo por você."
+      ]
+    },
+
+    {
+      "tag": "agradecimento_a_deus",
+      "patterns": [
+        "graças a deus",
+        "glória a deus",
+        "obrigado meu deus",
+        "deus é bom",
+        "amém"
+      ],
+      "responses": [
+        "🙏 Amém.",
+        "🙏 Gratidão também é uma forma de oração.",
+        "🙏 Que essa gratidão traga ainda mais paz."
+      ]
+    },
+
+    {
+      "tag": "tristeza_consolo",
+      "patterns": [
+        "estou sofrendo",
+        "estou com medo",
+        "estou angustiado",
+        "preciso de conforto",
+        "não aguento mais",
+        "estou em oração"
+      ],
+      "responses": [
+        "🙏 Mesmo nos momentos difíceis, você não está sozinho.",
+        "🙏 Que a fé te traga consolo e força.",
+        "🙏 Respire fundo. Tudo passa, e você é mais forte do que imagina."
+      ]
+    },
+
+    {
+      "tag": "versiculo_simples",
+      "patterns": [
+        "me diga um versículo",
+        "versículo da bíblia",
+        "palavra de deus",
+        "mensagem bíblica",
+        "frase bíblica"
+      ],
+      "responses": [
+        "📖 \"O Senhor é meu pastor, nada me faltará.\" (Salmo 23)",
+        "📖 \"Tudo posso naquele que me fortalece.\" (Filipenses 4:13)",
+        "📖 \"Entrega o teu caminho ao Senhor; confia nele.\" (Salmo 37:5)"
+      ]
+    },
+
+    {
+      "tag": "esperanca",
+      "patterns": [
+        "preciso de esperança",
+        "vai dar tudo certo",
+        "tenho fé que vai melhorar",
+        "acredito que vai passar",
+        "dias melhores virão"
+      ],
+      "responses": [
+        "🙏 Dias difíceis não duram para sempre.",
+        "🙏 A esperança é uma forma silenciosa de fé.",
+        "🙏 Continue firme. Coisas boas ainda virão."
+      ]
+    },
+
+    {
+      "tag": "respeito_religioso",
+      "patterns": [
+        "qual sua religião",
+        "você acredita em deus",
+        "você tem fé",
+        "você segue alguma religião"
+      ],
+      "responses": [
+        "🙏 Eu respeito todas as crenças e religiões.",
+        "🙏 Estou aqui para acolher, não para impor fé.",
+        "🙏 A fé é algo pessoal e merece respeito."
+      ]
+    }
   ]
 }
-  
     
   
+
 
 
 
