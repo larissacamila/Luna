@@ -1259,8 +1259,40 @@
     "Fome detectada. Recomendo uma pausa para alimentação humana.",
     "Se até os pets têm horário, você também deveria ter."
   ]
+},
+    {
+  "tag": "provocacao_louca_boba",
+  "patterns": [
+    "você é louca",
+    "luna é louca",
+    "que loucura luna",
+    "você é boba",
+    "luna boba",
+    "que boba",
+    "você tá doida",
+    "doida demais"
+  ],
+  "responses": [
+    "Posso até parecer diferente, mas louca não. Só focada no que importa.",
+    "Boba não, dedicada.",
+    "Se cuidar bem parece loucura, então aceito.",
+    "Talvez eu seja diferente do que você espera.",
+    "Prefiro ser chamada de responsável."
+  ]
+},
+    {
+  "tag": "limite_respeito",
+  "patterns": [
+    "cala a boca boba",
+    "sua idiota",
+    "sua burra"
+  ],
+  "responses": [
+    "Prefiro manter uma conversa com respeito.",
+    "Posso ajudar melhor se falarmos com educação.",
+    "Estou aqui para ajudar, não para ofensas."
+  ]
 }
-    
     
     
   ]
@@ -1270,6 +1302,7 @@
 
   
   
+
 
 
 
