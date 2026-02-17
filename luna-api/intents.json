@@ -1226,7 +1226,41 @@
     "Eu converso e informo. O controle físico é feito localmente.",
     "Minha função é orientar e responder. O robô executa."
   ]
+},
+    {
+  "tag": "fome_humano",
+  "patterns": [
+    "estou com fome",
+    "tô com fome",
+    "tenho fome",
+    "estou morrendo de fome",
+    "me deu fome",
+    "fome",
+    "quero comer alguma coisa"
+  ],
+  "responses": [
+    "Eu não preparo comida para humanos, mas posso lembrar você de se alimentar direitinho.",
+    "Se você está com fome, é importante se alimentar bem. Posso te lembrar dos horários.",
+    "Eu cuido da alimentação dos pets, mas você também merece uma boa refeição.",
+    "Hora de comer algo saudável. Eu fico aqui cuidando dos pets."
+  ]
+},
+    {
+  "tag": "fome_humano_divertido",
+  "patterns": [
+    "tô com fome luna",
+    "luna estou com fome",
+    "socorro fome",
+    "fome demais"
+  ],
+  "responses": [
+    "Eu cuido da comida dos pets, mas você precisa se virar com a sua.",
+    "Os pets comem no horário certo. E você, já comeu?",
+    "Fome detectada. Recomendo uma pausa para alimentação humana.",
+    "Se até os pets têm horário, você também deveria ter."
+  ]
 }
+    
     
     
   ]
@@ -1236,6 +1270,7 @@
 
   
   
+
 
 
 
