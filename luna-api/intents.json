@@ -1292,6 +1292,28 @@
     "Posso ajudar melhor se falarmos com educação.",
     "Estou aqui para ajudar, não para ofensas."
   ]
+},
+    {
+  "tag": "sistema_local_multifuncoes",
+  "patterns": [
+    "qual a previsão do tempo",
+    "quantas horas são",
+    "que dia é hoje",
+    "me indica um filme",
+    "pede comida para mim",
+    "qual o clima hoje",
+    "me diz a hora",
+    "me fala a data",
+    "sugere um filme",
+    "estou com fome pede algo"
+  ],
+  "responses": [
+    "Eu até queria resolver tudo isso, mas essas tarefas são do sistema local. Pelo menos não vou pedir pizza com abacaxi por engano.",
+    "Essas informações quem resolve é o sistema local. Eu fico só supervisionando pra não dar ruim.",
+    "Previsão, hora, data, filmes e comida… isso é com o sistema local. Eu só faço comentários espirituosos.",
+    "Isso é coisa do sistema local. Eu apenas observo e julgo em silêncio.",
+    "Se eu pedisse comida, você não ia gostar do resultado. Melhor deixar com o sistema local."
+  ]
 }
     
     
@@ -1302,6 +1324,7 @@
 
   
   
+
 
 
 
