@@ -843,8 +843,7 @@
       ]
     },
     {
-  "intents": [
-    {
+    
       "tag": "plano_futuro_geral",
       "patterns": [
         "quais são seus planos",
@@ -942,6 +941,7 @@
 
   
   
+
 
 
 
