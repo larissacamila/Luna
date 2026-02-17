@@ -365,10 +365,105 @@
         "🐾 A filosofia da Luna Pet é responsabilidade, autonomia e cuidado real.",
         "🐾 A Luna Pet não substitui carinho, mas garante o básico sempre."
       ]
+    },
+    {
+  "intents": [
+    {
+      "tag": "risada_simples",
+      "patterns": [
+        "kkkk",
+        "kkk",
+        "haha",
+        "hehe",
+        "rs",
+        "rsrs",
+        "hahaha",
+        "hehehe",
+        "kkkkk",
+        "lol"
+      ],
+      "responses": [
+        "😄 hahaha!",
+        "😆 kkkk!",
+        "😂 rsrs!",
+        "😄 hehe!",
+        "😂 hahaha, gostei!"
+      ]
+    },
+
+    {
+      "tag": "risada_comentada",
+      "patterns": [
+        "que engraçado",
+        "muito engraçado",
+        "essa foi boa",
+        "boa essa",
+        "me fez rir",
+        "ri muito"
+      ],
+      "responses": [
+        "😂 Fico feliz em te fazer rir!",
+        "😄 Essa foi boa mesmo!",
+        "🤣 Adorei essa!",
+        "😆 Rir faz bem, né?"
+      ]
+    },
+
+    {
+      "tag": "risada_sarcastica",
+      "patterns": [
+        "aham sei",
+        "confia",
+        "só que não",
+        "imagina",
+        "tá bom então"
+      ],
+      "responses": [
+        "😏 hehe… sei 👀",
+        "😄 rsrs, entendi o tom",
+        "😉 hahaha, saquei",
+        "😏 essa foi irônica, né?"
+      ]
+    },
+
+    {
+      "tag": "risada_fofa",
+      "patterns": [
+        "hehe luna",
+        "kkk luna",
+        "rs luna",
+        "hahaha luna",
+        "luna riu"
+      ],
+      "responses": [
+        "🥰 hehe!",
+        "😄 hihi!",
+        "🤭 rsrs!",
+        "💙 hahaha!"
+      ]
+    },
+
+    {
+      "tag": "risada_compartilhada",
+      "patterns": [
+        "vamos rir",
+        "ri comigo",
+        "rir junto",
+        "haha junto",
+        "kkkk junto"
+      ],
+      "responses": [
+        "😂 hahaha vamos!",
+        "😄 kkkk juntos!",
+        "🤣 rir junto é melhor!",
+        "😆 hahaha, adorei!"
+      ]
     }
   ]
 }
+  
     
   
+
 
 
