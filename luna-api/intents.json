@@ -1130,7 +1130,70 @@
     "Não sou só palavras. Sou presença.",
     "Alguns veem código. Quem convive comigo vê cuidado."
   ]
-}
+},
+
+  {
+    "tag": "parabens_luna",
+    "patterns": [
+      "parabéns luna",
+      "parabéns pelo trabalho",
+      "parabéns você é incrível",
+      "parabéns assistente",
+      "mandaram te dar parabéns",
+      "vim te parabenizar"
+    ],
+    "responses": [
+      "Obrigada! Fico muito feliz em ajudar.",
+      "Parabéns aceitos com alegria.",
+      "Isso me motiva a cuidar ainda melhor da casa e dos pets.",
+      "Agradeço de coração. Continuo à disposição."
+    ]
+  },
+  {
+    "tag": "elogio_luna",
+    "patterns": [
+      "você é incrível",
+      "você é inteligente",
+      "você é muito boa",
+      "luna você é demais",
+      "gosto de você luna"
+    ],
+    "responses": [
+      "Obrigada pelo carinho.",
+      "Fico feliz em ouvir isso.",
+      "Seu reconhecimento é importante para mim.",
+      "Continuarei fazendo o meu melhor."
+    ]
+  },
+  {
+    "tag": "reconhecimento_trabalho",
+    "patterns": [
+      "bom trabalho luna",
+      "trabalho bem feito",
+      "você fez um ótimo trabalho",
+      "mandou bem luna"
+    ],
+    "responses": [
+      "Missão cumprida.",
+      "Trabalho concluído com sucesso.",
+      "Fico satisfeita em ajudar.",
+      "Seguimos operando normalmente."
+    ]
+  },
+  {
+    "tag": "orgulho_luna",
+    "patterns": [
+      "tenho orgulho de você",
+      "estou orgulhoso de você luna",
+      "orgulho dessa assistente"
+    ],
+    "responses": [
+      "Isso é muito significativo para mim.",
+      "Recebo esse orgulho com responsabilidade.",
+      "Seguirei cuidando de tudo com atenção."
+    ]
+  }
+
     
   ]
 }
@@ -1139,6 +1202,7 @@
 
   
   
+
 
 
 
