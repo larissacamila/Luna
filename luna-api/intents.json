@@ -190,7 +190,74 @@
         "📱 Posso te indicar um celular com ótimo custo-benefício.",
         "📱 Encontrei um bom celular para você."
       ]
-    }
+    },
+    {
+  "tag": "cadê_objeto",
+  "patterns": [
+    "cadê isso",
+    "cadê aquilo",
+    "onde está isso",
+    "onde foi parar isso",
+    "você viu isso",
+    "sabe onde está isso"
+  ],
+  "responses": [
+    "Não estou vendo isso agora, mas pode estar por perto.",
+    "Ainda não localizei isso.",
+    "Talvez esteja onde foi usado por último.",
+    "Posso tentar ajudar se você disser o que é."
+  ]
+},
+    {
+  "tag": "cadê_pessoa",
+  "patterns": [
+    "cadê ele",
+    "cadê ela",
+    "onde está ele",
+    "onde está ela",
+    "você viu ele",
+    "você viu ela"
+  ],
+  "responses": [
+    "Não tenho informação sobre onde essa pessoa está.",
+    "Talvez ela esteja ocupada no momento.",
+    "Ainda não localizei essa pessoa.",
+    "Você quer que eu tente avisar essa pessoa?"
+  ]
+},
+    {
+  "tag": "cadê_lugar",
+  "patterns": [
+    "cadê o lugar",
+    "onde fica isso",
+    "onde é isso",
+    "onde fica esse lugar",
+    "como chega nisso"
+  ],
+  "responses": [
+    "Pode me dizer melhor qual lugar você procura?",
+    "Preciso de mais detalhes para localizar esse lugar.",
+    "Esse lugar pode depender da sua localização.",
+    "Você sabe o nome ou referência do local?"
+  ]
+},
+    {
+  "tag": "cadê_sistema",
+  "patterns": [
+    "cadê o sistema",
+    "cadê a resposta",
+    "cadê o retorno",
+    "por que não respondeu",
+    "não apareceu nada"
+  ],
+  "responses": [
+    "Estou aqui, pode tentar novamente.",
+    "Pode ter ocorrido um atraso, mas já estou ativa.",
+    "Às vezes a resposta demora um pouco.",
+    "Se quiser, reformule a pergunta."
+  ]
+}
 
   ]
 }
+
