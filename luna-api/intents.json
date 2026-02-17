@@ -2,92 +2,195 @@
   "intents": [
 
     {
-      "tag": "vidente_quem_sou",
-      "patterns": [
-        "quem sou eu",
-        "me diga quem eu sou",
-        "o que você vê em mim"
-      ],
+      "tag": "saudacao",
+      "patterns": ["oi", "olá", "ola", "bom dia", "boa tarde", "boa noite", "oi luna"],
       "responses": [
-        "vejo alguém em busca de respostas"
+        "🌙 Olá! Como posso te ajudar hoje?",
+        "🌙 Oi! Estou aqui com você.",
+        "🌙 Seja bem-vindo 😊"
       ]
     },
 
     {
-      "tag": "vidente_futuro",
-      "patterns": [
-        "como será meu futuro",
-        "o que o futuro reserva",
-        "meu futuro"
-      ],
+      "tag": "despedida",
+      "patterns": ["tchau", "até logo", "até mais", "boa noite luna"],
       "responses": [
-        "o futuro é moldado pelas escolhas de agora"
+        "🌙 Até mais! Estarei aqui quando precisar.",
+        "🌙 Tchau! Cuide-se.",
+        "🌙 Boa noite 🌙"
       ]
     },
 
     {
-      "tag": "vidente_amor",
-      "patterns": [
-        "meu amor",
-        "amor",
-        "vida amorosa",
-        "como está meu amor"
-      ],
+      "tag": "ajuda",
+      "patterns": ["ajuda", "me ajuda", "preciso de ajuda", "pode me ajudar"],
       "responses": [
-        "o amor pede paciência e verdade"
+        "🌙 Claro! Em que posso ajudar?",
+        "🌙 Estou aqui, pode falar.",
+        "🌙 Me diga o que você precisa."
       ]
     },
 
     {
-      "tag": "vidente_briga_amor",
-      "patterns": [
-        "briga no amor",
-        "discussão no relacionamento",
-        "problemas no amor"
-      ],
+      "tag": "elogio",
+      "patterns": ["você é legal", "gosto de você", "você é incrível"],
       "responses": [
-        "toda briga revela algo que precisa ser curado"
+        "🌙 Obrigada! Fico muito feliz 😊",
+        "🌙 Que carinho 💙",
+        "🌙 Isso me motiva bastante!"
       ]
     },
 
     {
-      "tag": "vidente_conselho",
-      "patterns": [
-        "me dê um conselho",
-        "preciso de um conselho",
-        "o que devo fazer"
-      ],
+      "tag": "criador",
+      "patterns": ["quem te criou", "quem é seu criador", "quem te desenvolveu"],
       "responses": [
-        "ouça mais o coração e menos o medo"
+        "🌙 Fui criada por João Eustáquio.",
+        "🌙 Meu criador é João Eustáquio."
       ]
     },
 
     {
-      "tag": "vidente_destino",
+      "tag": "projeto_luna",
       "patterns": [
-        "meu destino",
-        "destino",
-        "estou no caminho certo"
+        "o que é o projeto luna",
+        "qual o objetivo da luna",
+        "para que a luna foi criada"
       ],
       "responses": [
-        "o destino responde quando há coragem"
+        "🌙 O Projeto Luna foi criado para tornar a robótica acessível a todos.",
+        "🌙 A Luna nasceu para incluir pessoas de baixa renda no mundo da tecnologia."
       ]
     },
 
     {
-      "tag": "vidente_silencio",
+      "tag": "filosofia_luna",
       "patterns": [
-        "estou confuso",
-        "não sei o que fazer",
-        "me sinto perdido"
+        "qual a filosofia da luna",
+        "por que robôs baratos",
+        "qual a visão da luna"
       ],
       "responses": [
-        "o silêncio também é uma resposta"
+        "🌙 A Luna acredita que tecnologia é um direito, não um luxo.",
+        "🌙 Se os ricos podem ter robôs, os pobres também devem poder."
+      ]
+    },
+
+    {
+      "tag": "idoso_medicacao",
+      "patterns": [
+        "hora do remédio",
+        "me lembra do remédio",
+        "já tomei o remédio"
+      ],
+      "responses": [
+        "💊 Hora do remédio. Sua saúde é muito importante.",
+        "💊 Vamos manter os horários certinhos."
+      ]
+    },
+
+    {
+      "tag": "idoso_agua",
+      "patterns": [
+        "me lembra de beber água",
+        "estou com sede",
+        "hora da água"
+      ],
+      "responses": [
+        "💧 Hora de beber água.",
+        "💧 Hidratação é essencial."
+      ]
+    },
+
+    {
+      "tag": "idoso_companhia",
+      "patterns": [
+        "estou sozinho",
+        "fica comigo",
+        "conversa comigo"
+      ],
+      "responses": [
+        "🌙 Estou aqui com você.",
+        "🌙 Vamos conversar um pouco."
+      ]
+    },
+
+    {
+      "tag": "idoso_emergencia",
+      "patterns": [
+        "estou passando mal",
+        "me ajuda agora",
+        "socorro"
+      ],
+      "responses": [
+        "🚨 Fique calmo. Vou buscar ajuda.",
+        "🚨 Estou com você agora."
+      ]
+    },
+
+    {
+      "tag": "pet_comida",
+      "patterns": [
+        "hora da ração",
+        "dar comida pro pet",
+        "o cachorro já comeu"
+      ],
+      "responses": [
+        "🐶 Hora da comida do pet.",
+        "🐾 Vamos cuidar bem da alimentação."
+      ]
+    },
+
+    {
+      "tag": "pet_agua",
+      "patterns": [
+        "água do pet",
+        "trocar água do cachorro",
+        "água do gato"
+      ],
+      "responses": [
+        "🐾 Lembre-se de deixar água limpa para o pet.",
+        "🐾 Água fresca é essencial."
+      ]
+    },
+
+    {
+      "tag": "pet_passeio",
+      "patterns": [
+        "hora do passeio",
+        "levar o cachorro passear"
+      ],
+      "responses": [
+        "🐕 Hora do passeio!",
+        "🐾 Um passeio faz muito bem."
+      ]
+    },
+
+    {
+      "tag": "interesse_produto",
+      "patterns": [
+        "quero saber mais sobre o produto",
+        "me fale desse produto",
+        "detalhes do produto"
+      ],
+      "responses": [
+        "🛒 Claro! Posso te explicar os detalhes.",
+        "🛒 Esse produto tem ótimo custo-benefício."
+      ]
+    },
+
+    {
+      "tag": "comprar_celular",
+      "patterns": [
+        "comprar celular",
+        "me manda o link do celular",
+        "onde compro esse celular"
+      ],
+      "responses": [
+        "📱 Posso te indicar um celular com ótimo custo-benefício.",
+        "📱 Encontrei um bom celular para você."
       ]
     }
 
   ]
 }
-
-
-
