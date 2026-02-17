@@ -1038,6 +1038,51 @@
     "Respira fundo, você merece coisa melhor.",
     "Dói agora, mas vai passar. Foque em você."
   ]
+},
+    {
+  "tag": "silencio_comando",
+  "patterns": [
+    "cala a boca",
+    "silêncio",
+    "fica quieta",
+    "para de falar",
+    "quieta luna",
+    "shhh"
+  ],
+  "responses": [
+    "Tudo bem, ficarei em silêncio.",
+    "Certo, vou parar de falar.",
+    "Silêncio ativado.",
+    "Entendido, fico quieta agora."
+  ]
+},
+    {
+  "tag": "silencio_temporario",
+  "patterns": [
+    "fala menos",
+    "não precisa falar agora",
+    "depois falamos",
+    "agora não luna"
+  ],
+  "responses": [
+    "Entendido, fico em espera.",
+    "Tudo bem, aguardo você.",
+    "Certo, permanecerei em silêncio até você chamar."
+  ]
+},
+    {
+  "tag": "repressao_leve",
+  "patterns": [
+    "já entendi",
+    "ta bom já",
+    "chega",
+    "para"
+  ],
+  "responses": [
+    "Certo, já entendi.",
+    "Ok, parando agora.",
+    "Tudo bem, encerrando."
+  ]
 }
   ]
 }
@@ -1046,6 +1091,7 @@
 
   
   
+
 
 
 
