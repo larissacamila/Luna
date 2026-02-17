@@ -936,11 +936,101 @@
         "✨ Meu maior plano é cuidar, ajudar e evoluir."
       ]
     }
+  ,
+    {
+   
+      "tag": "cheguei_nao_sei_ligar",
+      "patterns": [
+        "cheguei agora",
+        "acabei de chegar",
+        "cheguei agora luna pet",
+        "acabei de chegar com a luna pet",
+        "não sei ligar",
+        "não sei como ligar",
+        "não sei ligar a luna",
+        "não sei ligar a luna pet",
+        "como liga isso",
+        "como ligo a luna pet",
+        "não sei usar ainda"
+      ],
+      "responses": [
+        "🐾 Bem-vindo! Eu te ajudo 😊 Vamos ligar a Luna Pet passo a passo.",
+        "🐾 Sem problema, é normal no começo. Vou te explicar como ligar.",
+        "🐾 Calma 😊 vou te orientar para ligar a Luna Pet corretamente."
+      ]
+    },
+
+    {
+      "tag": "ajuda_ligar_luna_pet",
+      "patterns": [
+        "como ligar",
+        "como ligar a luna",
+        "como ligar a luna pet",
+        "me ensina a ligar",
+        "como começo a usar",
+        "como iniciar a luna pet"
+      ],
+      "responses": [
+        "🔌 Primeiro, conecte a Luna Pet na energia e aguarde o LED acender.",
+        "🔌 Verifique se o Wi-Fi está ligado. Quando a luz da placa acender, estou pronta.",
+        "🔌 Assim que a luz acender, você já pode falar comigo."
+      ]
+    },
+
+    {
+      "tag": "primeiro_uso_luna_pet",
+      "patterns": [
+        "primeira vez usando",
+        "primeiro uso",
+        "nunca usei isso",
+        "estou começando agora",
+        "sou novo aqui"
+      ],
+      "responses": [
+        "🐾 Seja bem-vindo! No começo eu vou te guiar em tudo.",
+        "🐾 Estamos começando agora, então vamos com calma 😊",
+        "🐾 Qualquer dúvida, é só falar comigo."
+      ]
+    },
+
+    {
+      "tag": "confirmacao_ligou",
+      "patterns": [
+        "ligou",
+        "já ligou",
+        "acho que ligou",
+        "está ligado",
+        "a luz acendeu"
+      ],
+      "responses": [
+        "✅ Perfeito! Agora a Luna Pet está ligada.",
+        "✅ Ótimo! Já estou funcionando.",
+        "✅ Tudo certo! Pode falar comigo quando quiser."
+      ]
+    },
+
+    {
+      "tag": "erro_ligar_luna_pet",
+      "patterns": [
+        "não ligou",
+        "não funciona",
+        "não acende",
+        "não deu certo",
+        "não consegui ligar"
+      ],
+      "responses": [
+        "⚠️ Tudo bem, vamos tentar de novo com calma.",
+        "⚠️ Verifique a energia e o Wi-Fi, eu te ajudo.",
+        "⚠️ Me diga o que você está vendo aí."
+      ]
+    }
   ]
 }
 
+
   
   
+
 
 
 
