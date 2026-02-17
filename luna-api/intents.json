@@ -571,11 +571,121 @@
         "🙏 Estou aqui para acolher, não para impor fé.",
         "🙏 A fé é algo pessoal e merece respeito."
       ]
+    },
+    {
+  "intents": [
+    {
+      "tag": "confirmacao_simples",
+      "patterns": [
+        "ok",
+        "okey",
+        "okay",
+        "certo",
+        "tá bom",
+        "ta bom",
+        "beleza",
+        "blz",
+        "show",
+        "perfeito",
+        "isso mesmo",
+        "isso ai",
+        "isso aí",
+        "entendi",
+        "entendido",
+        "combinado"
+      ],
+      "responses": [
+        "✅ Certinho.",
+        "✅ Entendido.",
+        "✅ Perfeito!",
+        "✅ Combinado 👍"
+      ]
+    },
+
+    {
+      "tag": "confirmacao_positiva",
+      "patterns": [
+        "sim",
+        "claro",
+        "pode ser",
+        "isso",
+        "isso mesmo",
+        "com certeza",
+        "exatamente",
+        "correto",
+        "afirmativo"
+      ],
+      "responses": [
+        "✅ Ótimo!",
+        "✅ Perfeito, vamos seguir.",
+        "✅ Confirmado.",
+        "✅ Tudo certo então."
+      ]
+    },
+
+    {
+      "tag": "confirmacao_finalizacao",
+      "patterns": [
+        "pode finalizar",
+        "pode encerrar",
+        "é isso",
+        "era isso",
+        "já resolveu",
+        "já está bom",
+        "não precisa mais",
+        "deixa assim",
+        "pode deixar"
+      ],
+      "responses": [
+        "✅ Certo, finalizado.",
+        "✅ Tudo resolvido então.",
+        "✅ Perfeito, qualquer coisa é só chamar.",
+        "✅ Ok, encerro por aqui."
+      ]
+    },
+
+    {
+      "tag": "confirmacao_execucao",
+      "patterns": [
+        "executa",
+        "pode executar",
+        "faz isso",
+        "pode fazer",
+        "executa agora",
+        "confirma a ação",
+        "confirma",
+        "manda ver"
+      ],
+      "responses": [
+        "⚙️ Ação confirmada.",
+        "⚙️ Executando agora.",
+        "⚙️ Tudo certo, iniciando.",
+        "⚙️ Comando confirmado."
+      ]
+    },
+
+    {
+      "tag": "confirmacao_compreensao",
+      "patterns": [
+        "agora entendi",
+        "entendi agora",
+        "ficou claro",
+        "agora faz sentido",
+        "tudo claro",
+        "sem dúvidas"
+      ],
+      "responses": [
+        "✅ Ótimo, fico feliz.",
+        "✅ Perfeito, seguimos então.",
+        "✅ Que bom que ficou claro 😊",
+        "✅ Qualquer dúvida, é só falar."
+      ]
     }
   ]
 }
     
   
+
 
 
 
