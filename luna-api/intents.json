@@ -1023,13 +1023,30 @@
         "⚠️ Verifique a energia e o Wi-Fi, eu te ajudo.",
         "⚠️ Me diga o que você está vendo aí."
       ]
-    }
+    },
+    {
+  "tag": "consolar_corno",
+  "patterns": [
+    "fui traído",
+    "levei chifre",
+    "ela me traiu",
+    "ele me traiu",
+    "sou corno"
+  ],
+  "responses": [
+    "Calma, isso não define quem você é.",
+    "Respira fundo, você merece coisa melhor.",
+    "Dói agora, mas vai passar. Foque em você."
+  ]
+}
   ]
 }
 
 
+
   
   
+
 
 
 
