@@ -257,7 +257,118 @@
     "Se quiser, reformule a pergunta."
   ]
 }
+,{
+      "tag": "luna_pet_o_que_e",
+      "patterns": [
+        "o que é luna pet",
+        "como funciona a luna pet",
+        "me explique a luna pet",
+        "o que a luna pet faz",
+        "para que serve a luna pet"
+      ],
+      "responses": [
+        "🐾 A Luna Pet é um sistema inteligente criado para cuidar dos seus animais de estimação automaticamente.",
+        "🐾 A Luna Pet controla horários de comida e água para seus pets, mesmo quando não tem ninguém em casa.",
+        "🐾 A Luna Pet funciona de forma autônoma, garantindo que seus animais sejam cuidados no horário certo."
+      ]
+    },
 
+    {
+      "tag": "luna_pet_autonomia",
+      "patterns": [
+        "a luna pet funciona sozinha",
+        "precisa falar para a luna pet",
+        "ela funciona sem ninguém",
+        "se ninguém falar ela funciona",
+        "ela depende de comando"
+      ],
+      "responses": [
+        "🐾 A Luna Pet não depende de comandos de voz para funcionar.",
+        "🐾 Mesmo em silêncio total, a Luna Pet continua cuidando dos pets nos horários programados.",
+        "🐾 A Luna Pet foi criada para agir sozinha e não falhar por falta de interação humana."
+      ]
+    },
+
+    {
+      "tag": "luna_pet_animais_suportados",
+      "patterns": [
+        "quantos pets posso cadastrar",
+        "posso cadastrar mais de um animal",
+        "quantos animais a luna pet suporta",
+        "da para cuidar de varios pets",
+        "limite de animais"
+      ],
+      "responses": [
+        "🐾 A Luna Pet permite cadastrar até 3 animais diferentes.",
+        "🐾 Você pode configurar até três pets, cada um com horários próprios.",
+        "🐾 A Luna Pet foi projetada para cuidar de até 3 animais simultaneamente."
+      ]
+    },
+
+    {
+      "tag": "luna_pet_cadastro",
+      "patterns": [
+        "como cadastrar um pet",
+        "como adicionar um animal",
+        "como registrar meu pet",
+        "cadastro de pet",
+        "adicionar pet"
+      ],
+      "responses": [
+        "🐾 Para cadastrar um pet, você define o nome, tipo e horários de alimentação.",
+        "🐾 Cada pet pode ter sua própria rotina de comida e água.",
+        "🐾 O cadastro do pet permite que a Luna Pet cuide dele corretamente."
+      ]
+    },
+
+    {
+      "tag": "luna_pet_diferenca_animais",
+      "patterns": [
+        "os pets podem ter horarios diferentes",
+        "cada animal tem sua rotina",
+        "um pet pode comer em horario diferente",
+        "a luna diferencia os animais"
+      ],
+      "responses": [
+        "🐾 Sim, cada animal pode ter horários diferentes de alimentação e água.",
+        "🐾 A Luna Pet trata cada pet como único, respeitando sua rotina.",
+        "🐾 Os cuidados são personalizados para cada animal cadastrado."
+      ]
+    },
+
+    {
+      "tag": "luna_pet_seguranca",
+      "patterns": [
+        "é seguro usar a luna pet",
+        "a luna pet pode falhar",
+        "e se a internet cair",
+        "funciona sem internet",
+        "é confiável"
+      ],
+      "responses": [
+        "🐾 A Luna Pet funciona mesmo sem internet.",
+        "🐾 A segurança vem do controle local, sem depender da nuvem para agir.",
+        "🐾 A Luna Pet foi criada para não colocar seus pets em risco."
+      ]
+    },
+
+    {
+      "tag": "luna_pet_filosofia",
+      "patterns": [
+        "qual a ideia da luna pet",
+        "por que criar a luna pet",
+        "filosofia da luna pet",
+        "objetivo da luna pet"
+      ],
+      "responses": [
+        "🐾 A Luna Pet nasceu para garantir cuidado contínuo aos animais, mesmo quando humanos falham.",
+        "🐾 A filosofia da Luna Pet é responsabilidade, autonomia e cuidado real.",
+        "🐾 A Luna Pet não substitui carinho, mas garante o básico sempre."
+      ]
+    }
   ]
 }
+    
+  
+
 
