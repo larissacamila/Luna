@@ -680,8 +680,6 @@
       ]
     },
     {
-  "intents": [
-    {
       "tag": "pergunta_nome",
       "patterns": [
         "qual é o seu nome",
@@ -848,6 +846,7 @@
   ]
     }
   
+
 
 
 
