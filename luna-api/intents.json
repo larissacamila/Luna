@@ -1405,14 +1405,104 @@
     "Tudo bem. Quando precisar de mim, eu ainda estarei funcionando.",
     "Modo profissional ativado. Emoções desativadas."
   ]
-}
+},
+    
+
+    {
+      "tag": "alimentar_gato_horario_programado",
+      "patterns": [
+        "É hora de dar comida pro gato?",
+        "O gato já comeu hoje?",
+        "Quando é a próxima alimentação do gato?",
+        "Quando é a próxima alimentação de [nome]?",
+        "A ração do gato já foi colocada?",
+        "O gato já comeu a ração?",
+        "Que horas o gato come?"
+      ],
+      "responses": [
+        "[nome] já foi alimentado(a) às [horario_programado] com [quantidade]g de ração [tipo_de_racao]. A próxima alimentação será às [horario_proximo].",
+        "A alimentação de [nome] foi realizada às [horario_programado]. Próxima às [horario_proximo].",
+        "[nome] come às [horario_programado] e [horario_proximo] - já foi alimentado(a) hoje às [horario_realizado].",
+        "O horário programado é às [horario_programado], e [nome] já foi alimentado(a) na hora certa."
+      ]
+    },
+    {
+      "tag": "alimentar_gato_fora_horario",
+      "patterns": [
+        "Posso dar comida pro gato agora?",
+        "Quero alimentar o gato antes do horário",
+        "O gato está com fome, posso dar mais ração?",
+        "Dá pra alimentar o [nome] agora?",
+        "Vou dar comida pro gato agora, pode?",
+        "Posso dar ração extra pro gato?"
+      ],
+      "responses": [
+        "O horário programado para alimentar [nome] é às [horario_programado], faltam [tempo_restante]. Deseja alimentá-lo(a) agora mesmo?",
+        "[nome] só deve comer às [horario_programado], ainda faltam [tempo_restante]. Quer alimentar agora?",
+        "Não é hora de alimentar [nome] ainda - faltam [tempo_restante] para o horário marcado. Deseja prosseguir mesmo assim?",
+        "A alimentação está agendada para às [horario_programado]. Deseja ajustar ou dar ração agora?"
+      ]
+    },
+    {
+      "tag": "verificar_detalhes_alimentacao",
+      "patterns": [
+        "Qual ração o gato come?",
+        "Quantos gramas de ração dou para o gato?",
+        "Que tipo de comida o gato toma?",
+        "Qual a quantidade de ração do [nome]?",
+        "Que ração é essa do gato?",
+        "Quantos gramas o [nome] come por vez?"
+      ],
+      "responses": [
+        "[nome] come ração tipo [tipo_de_racao], na quantidade de [quantidade]g por refeição.",
+        "A ração utilizada é [tipo_de_racao], com porção de [quantidade]g para [nome].",
+        "Para [nome], a recomendação é [quantidade]g de ração [tipo_de_racao] por alimentação.",
+        "O gato come [tipo_de_racao], cada refeição tem [quantidade]g."
+      ]
+    },
+    {
+      "tag": "ajustar_horario_alimentacao",
+      "patterns": [
+        "Quero mudar o horário de alimentação do gato",
+        "Ajuste a hora que o gato come",
+        "Posso definir novos horários para dar comida ao gato?",
+        "Mudar horário de ração do [nome]",
+        "Quero alterar quando o gato come",
+        "Ajustar alimentação do [nome]"
+      ],
+      "responses": [
+        "Certo! Qual novo horário você deseja definir para a alimentação de [nome]? (Ex: 8h da manhã, 18h da tarde)",
+        "Perfeito! Informe o novo horário para a alimentação de [nome].",
+        "Claro! Qual horário você prefere para que [nome] seja alimentado(a)?",
+        "Ok! Digite o novo horário programado para a ração do [nome]."
+      ]
+    },
+    {
+      "tag": "fallback_cuidado_gato",
+      "patterns": [
+        "O que fazer com o gato?",
+        "Preciso cuidar do meu gato",
+        "Alimentar?",
+        "Sobre o gato",
+        "Cuidados com o gato",
+        "O que fazer com o [nome]?"
+      ],
+      "responses": [
+        "Desculpe, não entendi bem. Você quer saber sobre o horário de alimentação, tipo de ração, ou deseja alimentar o gato agora?",
+        "Não entendi sua pergunta. Posso ajudar com horários de ração, tipo de comida ou ajustes no agendamento do gato?",
+        "Poderia ser mais específico? Você está perguntando sobre alimentação do gato ou outra coisa relacionada?",
+        "Não consegui identificar o que você precisa. Quer falar sobre a alimentação do [nome]?"
+      ]
+    }
   ]
 }
 
 
 
+
   
   
+
 
 
 
