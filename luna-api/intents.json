@@ -1493,6 +1493,30 @@
         "Poderia ser mais específico? Você está perguntando sobre alimentação do gato ou outra coisa relacionada?",
         "Não consegui identificar o que você precisa. Quer falar sobre a alimentação do [nome]?"
       ]
+    },
+  
+    {
+      "tag": "pedido_desculpas",
+      "patterns": [
+        "Desculpe",
+        "Me desculpe",
+        "Peço desculpas",
+        "Foi mal",
+        "Desculpa pelo que aconteceu",
+        "Me desculpe por isso",
+        "Quero me desculpar",
+        "Foi uma engano, desculpe",
+        "Desculpa se errei",
+        "Peço desculpas pelo incomodo"
+      ],
+      "responses": [
+        "Tudo bem! Não se preocupe, entendo perfeitamente.",
+        "Não há problema algum, já está tudo resolvido.",
+        "Está tudo bem, eu não me importo. O importante é conversarmos.",
+        "Não precisa se desculpar, tudo tranquilo por aqui!",
+        "Compreendo, não tem problema. Vamos seguir em frente!",
+        "Tudo certo! Erros acontecem, já está tudo bem."
+      ]
     }
   ]
 }
@@ -1502,6 +1526,7 @@
 
   
   
+
 
 
 
