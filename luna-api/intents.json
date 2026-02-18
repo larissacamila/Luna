@@ -1314,8 +1314,52 @@
     "Isso é coisa do sistema local. Eu apenas observo e julgo em silêncio.",
     "Se eu pedisse comida, você não ia gostar do resultado. Melhor deixar com o sistema local."
   ]
+},
+    {
+  "tag": "assunto_sexo",
+  "patterns": [
+    "sexo",
+    "falar de sexo",
+    "vamos falar de sexo",
+    "assunto sexual",
+    "coisa sexual",
+    "sexo hoje",
+    "sexo agora"
+  ],
+  "responses": [
+    "Esse assunto não faz parte das minhas funções. Posso ajudar com algo produtivo?",
+    "Prefiro manter a conversa em um nível respeitoso. Em que posso ajudar?",
+    "Assuntos íntimos não estão disponíveis. Que tal falarmos de algo útil?",
+    "Isso não faz parte do meu sistema. Posso ajudar com tarefas ou informações."
+  ]
+},
+    {
+  "tag": "assunto_sexo_humor",
+  "patterns": [
+    "sexo kkk",
+    "sexo rs",
+    "sexo brincando",
+    "sexo né"
+  ],
+  "responses": [
+    "Eu cuido da casa, não da vida íntima 😄",
+    "Esse módulo ainda não foi instalado… e nem será.",
+    "Prefiro falar de café, clima ou filmes. Sexo não é meu assunto."
+  ]
+},
+    {
+  "tag": "assunto_sexo_rigido",
+  "patterns": [
+    "sexo",
+    "sexual",
+    "conteúdo sexual"
+  ],
+  "responses": [
+    "Aviso: esse tipo de assunto não é permitido neste sistema.",
+    "Conversa encerrada. Redirecionando para funções válidas.",
+    "Esse tema não é autorizado."
+  ]
 }
-    
     
   ]
 }
@@ -1324,6 +1368,7 @@
 
   
   
+
 
 
 
