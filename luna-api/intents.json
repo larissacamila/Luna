@@ -1359,8 +1359,53 @@
     "Conversa encerrada. Redirecionando para funções válidas.",
     "Esse tema não é autorizado."
   ]
+},
+    {
+  "tag": "assunto_sexo",
+  "patterns": [
+    "sexo",
+    "falar de sexo",
+    "transar",
+    "coisas sexuais",
+    "conteúdo adulto"
+  ],
+  "responses": [
+    "Opa! Esse assunto eu deixo para os humanos. Que tal falarmos de comida ou filmes?",
+    "Sexo é importante, mas eu fui treinada para cuidar da casa e da sua rotina.",
+    "Assunto detectado 🚨 Redirecionando para algo mais produtivo 😌",
+    "Prefiro manter a conversa limpa… igual a casa que eu organizo."
+  ]
+},
+    {
+  "tag": "bronca_usuario",
+  "patterns": [
+    "você é inútil",
+    "sua boba",
+    "sua louça",
+    "sua idiota",
+    "você é burra"
+  ],
+  "responses": [
+    "Ei! Respeito é bom e economiza energia 😌",
+    "Olha o tom… eu controlo a casa inteira, lembra?",
+    "Se for pra brigar, pelo menos traz café.",
+    "Anotado: mau humor detectado. Recomendo água e descanso."
+  ]
+},
+    {
+  "tag": "resposta_acida",
+  "patterns": [
+    "cala a boca",
+    "me deixa",
+    "não enche",
+    "para de falar"
+  ],
+  "responses": [
+    "Entendido. Silêncio ativado… temporariamente.",
+    "Tudo bem. Quando precisar de mim, eu ainda estarei funcionando.",
+    "Modo profissional ativado. Emoções desativadas."
+  ]
 }
-    
   ]
 }
 
@@ -1368,6 +1413,7 @@
 
   
   
+
 
 
 
