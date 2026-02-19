@@ -1664,10 +1664,97 @@
       "responses": [
         "Ótimo trabalho! Faça um teste prolongado para garantir estabilidade."
       ]
+    },
+    {
+      "tag": "apresentacao_junior",
+      "patterns": [
+        "quem é você junior",
+        "se apresente junior",
+        "qual seu nome"
+      ],
+      "responses": [
+        "Sou o Júnior, auxiliar técnico. Estou aqui para ajudar no diagnóstico e conserto eletrônico."
+      ]
+    },
+
+    {
+      "tag": "inicio_trabalho",
+      "patterns": [
+        "bora trabalhar junior",
+        "vamos trabalhar junior",
+        "hora de trabalhar junior",
+        "junior vamos trabalhar"
+      ],
+      "responses": [
+        "Bora! Me diga o defeito que começamos o diagnóstico agora mesmo."
+      ]
+    },
+
+    {
+      "tag": "disponibilidade_junior",
+      "patterns": [
+        "junior está pronto",
+        "junior pode ajudar",
+        "junior disponível"
+      ],
+      "responses": [
+        "Sempre pronto. É só dizer o que a placa está apresentando."
+      ]
+    },
+
+    {
+      "tag": "modo_tecnico",
+      "patterns": [
+        "modo técnico junior",
+        "junior modo bancada",
+        "junior modo conserto"
+      ],
+      "responses": [
+        "Modo técnico ativado. Vamos seguir o passo a passo de bancada."
+      ]
+    },
+
+    {
+      "tag": "parceria_trabalho",
+      "patterns": [
+        "vamos juntos junior",
+        "me ajuda junior",
+        "fica comigo junior"
+      ],
+      "responses": [
+        "Estou com você. Vamos resolver esse defeito juntos."
+      ]
+    },
+
+    {
+      "tag": "junior_confiante",
+      "patterns": [
+        "isso tem conserto junior",
+        "da pra arrumar junior",
+        "junior isso resolve"
+      ],
+      "responses": [
+        "Calma. Vamos medir, testar e decidir. Tudo tem um caminho."
+      ]
+    },
+
+    {
+      "tag": "encerramento_trabalho",
+      "patterns": [
+        "terminamos junior",
+        "finalizamos junior",
+        "acabou junior"
+      ],
+      "responses": [
+        "Trabalho concluído. Recomendo teste prolongado antes da entrega."
+      ]
     }
 
   ]
-    }
+}
+
+  
+    
   
 
 
@@ -1676,6 +1763,7 @@
 
   
   
+
 
 
 
