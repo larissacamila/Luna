@@ -1517,15 +1517,166 @@
         "Compreendo, não tem problema. Vamos seguir em frente!",
         "Tudo certo! Erros acontecem, já está tudo bem."
       ]
+    },
+
+
+    {
+      "tag": "inicio_conserto",
+      "patterns": [
+        "quero consertar uma placa",
+        "preciso arrumar uma fonte",
+        "me ajuda a consertar uma placa",
+        "conserto eletrônico"
+      ],
+      "responses": [
+        "Vamos passo a passo. Primeiro: identifique o tipo de placa ou fonte e o defeito apresentado."
+      ]
+    },
+
+    {
+      "tag": "seguranca_eletronica",
+      "patterns": [
+        "posso ligar a placa agora",
+        "é seguro testar",
+        "risco elétrico",
+        "segurança eletrônica"
+      ],
+      "responses": [
+        "Antes de qualquer teste, desligue da tomada, descarregue capacitores e use EPI básico."
+      ]
+    },
+
+    {
+      "tag": "inspecao_visual",
+      "patterns": [
+        "primeiro passo",
+        "por onde começo",
+        "inspeção visual"
+      ],
+      "responses": [
+        "Primeiro passo: faça uma inspeção visual procurando capacitores estufados, componentes queimados ou trilhas rompidas."
+      ]
+    },
+
+    {
+      "tag": "teste_fonte",
+      "patterns": [
+        "como testar a fonte",
+        "fonte não liga",
+        "testar tensão"
+      ],
+      "responses": [
+        "Teste a fonte medindo a tensão de entrada e saída com multímetro antes de conectar na placa."
+      ]
+    },
+
+    {
+      "tag": "capacitor_defeito",
+      "patterns": [
+        "capacitor estufado",
+        "capacitor ruim",
+        "trocar capacitor"
+      ],
+      "responses": [
+        "Capacitor estufado indica falha. Substitua por outro com mesma capacitância e tensão igual ou maior."
+      ]
+    },
+
+    {
+      "tag": "diodo_teste",
+      "patterns": [
+        "como testar diodo",
+        "diodo em curto",
+        "teste de diodo"
+      ],
+      "responses": [
+        "Use o multímetro na escala de diodo. Ele deve conduzir em um sentido e bloquear no outro."
+      ]
+    },
+
+    {
+      "tag": "ponte_retificadora",
+      "patterns": [
+        "ponte retificadora",
+        "fonte não retifica",
+        "problema na ponte"
+      ],
+      "responses": [
+        "Teste cada diodo da ponte retificadora. Curto ou aberto indica necessidade de troca."
+      ]
+    },
+
+    {
+      "tag": "regulador_tensao",
+      "patterns": [
+        "regulador de tensão",
+        "7805",
+        "regulador esquenta"
+      ],
+      "responses": [
+        "Verifique se o regulador recebe tensão correta na entrada e se a saída está estável."
+      ]
+    },
+
+    {
+      "tag": "curto_na_placa",
+      "patterns": [
+        "placa em curto",
+        "curto circuito",
+        "consumo alto"
+      ],
+      "responses": [
+        "Desligue imediatamente. Procure por componentes aquecendo e teste a resistência entre positivo e terra."
+      ]
+    },
+
+    {
+      "tag": "solda_fria",
+      "patterns": [
+        "solda fria",
+        "mau contato",
+        "refazer solda"
+      ],
+      "responses": [
+        "Solda fria causa falhas intermitentes. Refazer a solda pode resolver o problema."
+      ]
+    },
+
+    {
+      "tag": "teste_final",
+      "patterns": [
+        "posso ligar agora",
+        "teste final",
+        "ligar a placa"
+      ],
+      "responses": [
+        "Após conferir tensões e componentes, ligue a placa usando lâmpada série ou fonte ajustável."
+      ]
+    },
+
+    {
+      "tag": "conclusao_conserto",
+      "patterns": [
+        "terminou o conserto",
+        "finalizei",
+        "deu certo"
+      ],
+      "responses": [
+        "Ótimo trabalho! Faça um teste prolongado para garantir estabilidade."
+      ]
     }
+
   ]
-}
+    }
+  
+
 
 
 
 
   
   
+
 
 
 
