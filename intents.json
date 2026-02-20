@@ -1748,8 +1748,26 @@
       "responses": [
         "Trabalho concluído. Recomendo teste prolongado antes da entrega."
       ]
+    },
+    
+{
+      "tag": "comprei_luna",
+      "patterns": [
+        "comprei uma luna",
+        "ganhei uma luna",
+        "tenho uma luna",
+        "acabei de comprar uma luna"
+      ],
+      "responses": [
+        "Uau! 🌙 Parabéns! Agora você tem uma Luna para te ajudar!",
+        "Que incrível! 😄 Diga olá para a sua Luna!",
+        "Luna ativada! Prepare-se para muita companhia e diversão!",
+        "Eba! Sua Luna chegou! Vamos explorar juntos o que ela pode fazer?",
+        "Perfeito! Agora você tem uma assistente 24/7 pronta para te ajudar!"
+      ]
     }
-
+  ]
+}
   ]
 }
 
