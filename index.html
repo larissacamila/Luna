@@ -79,6 +79,12 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
+img.msg-img {
+    max-width: 150px;
+    border-radius: 8px;
+    margin-top: 4px;
+    display: block;
+}
 </style>
 </head>
 
@@ -104,10 +110,17 @@ button {
 </div>
 
 <script>
-const API = "https://luna-ad4s.onrender.com/chat";
+const API = "https://comandos-mmmu.onrender.com/chat";
 
 const AVATAR_IDLE = "1771554426131.png";
 const AVATAR_ACTIVE = "1771554415763.png";
+
+// Lista de imagens na raiz
+const imagens = {
+    "gato": "gato.jpg",
+    "cachorro": "cachorro.jpg",
+    "lua": "lua.jpeg"
+};
 
 // =========================
 // FILTRO DE EMOJI (GLOBAL)
@@ -148,7 +161,7 @@ function enviar(textoManual = null) {
             data.msg ||
             "🌙 Recebi, mas não sei responder agora.";
 
-        // Mostra resposta com emoji
+        // Mostra resposta com possível imagem
         add("Luna", resposta, "luna");
 
         // Fala SEM emoji
@@ -229,12 +242,26 @@ function setAvatar(ativo) {
 }
 
 // =========================
-// UI
+// UI + IMAGENS
 // =========================
 function add(nome, texto, cls) {
     const div = document.createElement("div");
     div.className = "msg " + cls;
-    div.innerHTML = `<b>${nome}:</b> ${texto}`;
+
+    // Verifica palavras-chave de imagens
+    let encontrouImagem = false;
+    for (const key in imagens) {
+        if (texto.toLowerCase().includes(key)) {
+            div.innerHTML = `<b>${nome}:</b> ${texto}<br><img class="msg-img" src="${imagens[key]}">`;
+            encontrouImagem = true;
+            break;
+        }
+    }
+
+    if (!encontrouImagem) {
+        div.innerHTML = `<b>${nome}:</b> ${texto}`;
+    }
+
     const msg = document.getElementById("messages");
     msg.appendChild(div);
     msg.scrollTop = msg.scrollHeight;
@@ -243,5 +270,3 @@ function add(nome, texto, cls) {
 
 </body>
 </html>
-
-
