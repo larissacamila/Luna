@@ -1,257 +1,249 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luna Chat</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luna Mobile</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-image: url("assets/imagens/luna/fundo.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+<style>
+body {
+    margin: 0;
+    background: #0f172a;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
 
-    /* LOGIN */
-    .login-container {
-      width: 320px;
-      background-color: rgba(42, 42, 61, 0.95);
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-      text-align: center;
-    }
+#app {
+    width: 100%;
+    max-width: 420px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #020617;
+}
 
-    .login-container input {
-      width: 100%;
-      padding: 9px;
-      border-radius: 6px;
-      border: none;
-      margin-bottom: 8px;
-    }
+header {
+    text-align: center;
+    padding: 12px;
+}
 
-    .login-container button {
-      width: 100%;
-      padding: 9px;
-      border-radius: 6px;
-      border: none;
-      background-color: #ffcc66;
-      font-weight: bold;
-      cursor: pointer;
-    }
+#avatar {
+    width: 120px;
+    height: 120px;
+    margin: 10px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(167,139,250,0.5);
+    transition: box-shadow 0.3s ease;
+}
 
-    .erro {
-      color: #ff6b6b;
-      font-size: 0.9em;
-    }
+#avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    /* CHAT (seu código original) */
-    .chat-container {
-      display: none;
-      width: 360px;
-      max-width: 95%;
-      background-color: rgba(42, 42, 61, 0.92);
-      border-radius: 12px;
-      padding: 10px;
-      flex-direction: column;
-      height: 540px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-    }
+#messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
 
-    .avatar {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 6px;
-    }
+.msg {
+    margin: 6px 0;
+    font-size: 14px;
+}
+.user { color: #38bdf8; }
+.luna { color: #a78bfa; }
 
-    .avatar img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      border: 3px solid #ffcc66;
-      object-fit: cover;
-    }
+#controls {
+    display: flex;
+    gap: 6px;
+    padding: 10px;
+}
 
-    .chat-window {
-      flex: 1;
-      overflow-y: auto;
-      padding: 8px;
-      border-radius: 6px;
-      background-color: #1f1f2d;
-      margin-bottom: 6px;
-    }
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+}
 
-    .message {
-      margin: 6px 0;
-      line-height: 1.4;
-    }
-
-    .user { color: #9acdff; }
-    .luna { color: #ffcc66; }
-
-    input {
-      width: 100%;
-      padding: 9px;
-      border-radius: 6px;
-      border: none;
-      outline: none;
-      margin-bottom: 6px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 6px;
-    }
-
-    button {
-      flex: 1;
-      padding: 9px;
-      border: none;
-      border-radius: 6px;
-      background-color: #ffcc66;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #e6b24d;
-    }
-
-    .mic {
-      background-color: #6cf;
-    }
-  </style>
+button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
 </head>
 
 <body>
 
-<!-- LOGIN -->
-<div class="login-container" id="loginBox">
-  <h3>🔒 Acesso Luna</h3>
-  <input type="password" id="senha" placeholder="Digite a senha">
-  <button onclick="login()">Entrar</button>
-  <div class="erro" id="erro"></div>
+<div id="app">
+
+<header>
+    <h3>🌙 Luna</h3>
+    <div id="avatar">
+        <img id="avatarImg" src="1771555838106.png" alt="Luna">
+    </div>
+</header>
+
+<div id="messages"></div>
+
+<div id="controls">
+    <input id="texto" placeholder="Digite ou fale">
+    <button onclick="enviar()">➤</button>
+    <button onclick="ouvir()">🎤</button>
 </div>
-
-<!-- CHAT -->
-<div class="chat-container" id="chatBox">
-
-  <div class="avatar">
-    <img src="assets/imagens/luna/logoluna.jpg" alt="Luna">
-  </div>
-
-  <div class="chat-window" id="chatWindow"></div>
-
-  <input type="text" id="userInput" placeholder="Escreva ou fale algo...">
-
-  <div class="buttons">
-    <button onclick="enviar()">Enviar</button>
-    <button class="mic" onclick="ouvir()">🎤</button>
-  </div>
 
 </div>
 
 <script>
-  const CHAT_PASSWORD = "1234"; // 🔑 MUDE AQUI
-  const API_URL = "https://luna-ad4s.onrender.com/chat";
+const API = "https://luna-ad4s.onrender.com";
 
-  const loginBox = document.getElementById("loginBox");
-  const chatBox = document.getElementById("chatBox");
-  const erro = document.getElementById("erro");
+const AVATAR_IDLE = "1771554426131.png";
+const AVATAR_ACTIVE = "1771554415763.png";
 
-  function login() {
-    if (document.getElementById("senha").value === CHAT_PASSWORD) {
-      loginBox.style.display = "none";
-      chatBox.style.display = "flex";
-    } else {
-      erro.textContent = "Senha incorreta";
-    }
-  }
+// =========================
+// FILTRO DE EMOJI (GLOBAL)
+// =========================
+function removerEmojis(texto) {
+    return texto.replace(
+        /[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu,
+        ""
+    ).trim();
+}
 
-  const chatWindow = document.getElementById("chatWindow");
-  const userInput = document.getElementById("userInput");
+// =========================
+// ENVIO DE TEXTO
+// =========================
+function enviar(textoManual = null) {
+    const input = document.getElementById("texto");
+    let textoOriginal = textoManual || input.value.trim();
+    if (!textoOriginal) return;
 
-  let vozSelecionada = null;
+    // Mostra o texto original (com emoji) no chat
+    add("Você", textoOriginal, "user");
 
-  function addMessage(text, sender) {
-    const div = document.createElement("div");
-    div.className = "message " + sender;
-    div.textContent = text;
-    chatWindow.appendChild(div);
-    chatWindow.scrollTop = chatWindow.scrollHeight;
-  }
+    // Remove emoji ANTES de ir para API
+    const textoLimpo = removerEmojis(textoOriginal);
 
-  function removerEmojis(texto) {
-    return texto.replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu,"").trim();
-  }
+    setAvatar(true);
 
-  function carregarVozes() {
-    const vozes = speechSynthesis.getVoices();
-    vozSelecionada = vozes.find(v => v.lang === "pt-BR") || vozes[0];
-  }
-
-  speechSynthesis.onvoiceschanged = carregarVozes;
-
-  function falar(texto) {
-    if (!vozSelecionada) carregarVozes();
-    const fala = new SpeechSynthesisUtterance(removerEmojis(texto));
-    fala.lang = "pt-BR";
-    fala.pitch = 1.2;
-    speechSynthesis.cancel();
-    speechSynthesis.speak(fala);
-  }
-
-  async function enviar() {
-    const pergunta = userInput.value.trim();
-    if (!pergunta) return;
-
-    addMessage("Você: " + pergunta, "user");
-    userInput.value = "";
-
-    try {
-      const response = await fetch(API_URL, {
+    fetch(API, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: pergunta })
-      });
+        body: JSON.stringify({ texto: textoLimpo })
+    })
+    .then(res => res.json())
+    .then(data => {
+        const resposta =
+            data.resposta ||
+            data.response ||
+            data.msg ||
+            "🌙 Recebi, mas não sei responder agora.";
 
-      const data = await response.json();
-      const resposta = data.response || "Não entendi.";
-      addMessage("Luna: " + resposta, "luna");
-      falar(resposta);
+        // Mostra resposta com emoji
+        add("Luna", resposta, "luna");
 
-    } catch {
-      addMessage("Luna: Erro de conexão 😢", "luna");
-    }
-  }
+        // Fala SEM emoji
+        falar(resposta);
+    })
+    .catch(() => {
+        add("Luna", "Erro de conexão 😢", "luna");
+        setAvatar(false);
+    });
 
-  function ouvir() {
+    input.value = "";
+}
+
+// =========================
+// MICROFONE
+// =========================
+function ouvir() {
     if (!("webkitSpeechRecognition" in window)) {
-      alert("Reconhecimento de voz não suportado.");
-      return;
+        alert("Microfone não suportado");
+        return;
     }
 
-    const r = new webkitSpeechRecognition();
-    r.lang = "pt-BR";
-    r.start();
-    r.onresult = e => {
-      userInput.value = e.results[0][0].transcript;
-      enviar();
-    };
-  }
+    const rec = new webkitSpeechRecognition();
+    rec.lang = "pt-BR";
 
-  userInput.addEventListener("keydown", e => {
-    if (e.key === "Enter") enviar();
-  });
+    setAvatar(true);
+    rec.start();
+
+    rec.onresult = e => {
+        const textoFalado = e.results[0][0].transcript;
+        enviar(textoFalado);
+    };
+
+    rec.onerror = () => {
+        setAvatar(false);
+        add("Sistema", "Erro ao ouvir 😢", "luna");
+    };
+}
+
+// =========================
+// VOZ DA LUNA (SEM EMOJI)
+// =========================
+function falar(texto) {
+    if (!("speechSynthesis" in window)) {
+        setAvatar(false);
+        return;
+    }
+
+    const textoLimpo = removerEmojis(texto);
+    if (!textoLimpo) {
+        setAvatar(false);
+        return;
+    }
+
+    const voz = new SpeechSynthesisUtterance(textoLimpo);
+    voz.lang = "pt-BR";
+
+    voz.onstart = () => setAvatar(true);
+    voz.onend = () => setAvatar(false);
+
+    speechSynthesis.speak(voz);
+}
+
+// =========================
+// AVATAR (ESTADOS)
+// =========================
+function setAvatar(ativo) {
+    const avatar = document.getElementById("avatar");
+    const img = document.getElementById("avatarImg");
+
+    if (ativo) {
+        img.src = AVATAR_ACTIVE;
+        avatar.style.boxShadow = "0 0 35px #a78bfa";
+    } else {
+        img.src = AVATAR_IDLE;
+        avatar.style.boxShadow = "0 0 15px rgba(167,139,250,0.5)";
+    }
+}
+
+// =========================
+// UI
+// =========================
+function add(nome, texto, cls) {
+    const div = document.createElement("div");
+    div.className = "msg " + cls;
+    div.innerHTML = `<b>${nome}:</b> ${texto}`;
+    const msg = document.getElementById("messages");
+    msg.appendChild(div);
+    msg.scrollTop = msg.scrollHeight;
+}
 </script>
 
 </body>
 </html>
+
+
+
+
