@@ -1765,7 +1765,24 @@
         "Eba! Sua Luna chegou! Vamos explorar juntos o que ela pode fazer?",
         "Perfeito! Agora você tem uma assistente 24/7 pronta para te ajudar!"
       ]
+    },
+    {
+      "tag": "joao",
+      "patterns": [
+        "João",
+        "joao",
+        "Oi João",
+        "Olá João",
+        "Tudo bem João",
+        "Fala João"
+      ],
+      "responses": [
+        "Oi João! 😄",
+        "E aí João, tudo certo? 🌙",
+        "Olá João! Que bom te ver aqui!",
+        "Oi João! Preparado para conversar com a Luna?"
+      ]
     }
   ]
 }
-  
+
