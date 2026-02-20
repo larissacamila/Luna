@@ -58,6 +58,14 @@ header {
 .user { color: #38bdf8; }
 .luna { color: #a78bfa; }
 
+.msg-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 6px;
+}
+
 #controls {
     display: flex;
     gap: 6px;
@@ -79,12 +87,6 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
-img.msg-img {
-    max-width: 150px;
-    border-radius: 8px;
-    margin-top: 4px;
-    display: block;
-}
 </style>
 </head>
 
@@ -95,7 +97,7 @@ img.msg-img {
 <header>
     <h3>🌙 Luna</h3>
     <div id="avatar">
-        <img id="avatarImg" src="1771555838106.png" alt="Luna">
+        <img id="avatarImg" src="avatar_idle.jpg" alt="Luna">
     </div>
 </header>
 
@@ -110,40 +112,44 @@ img.msg-img {
 </div>
 
 <script>
+// API da Luna
 const API = "https://luna-ad4s.onrender.com/chat";
 
-const AVATAR_IDLE = "1771554426131.png";
-const AVATAR_ACTIVE = "1771554415763.png";
+// Avatar
+const AVATAR_IDLE = "avatar_idle.jpg";
+const AVATAR_ACTIVE = "avatar_active.jpg";
 
-// Lista de imagens na raiz
+// Palavras-chave para imagens (adicione mais)
 const imagens = {
-    "gato": "gato.png",
+    "joao": "34.jpg",
     "cachorro": "cachorro.jpg",
-    "lua": "lua.jpeg","joao": "joao.jpg"
+    "gato": "gato.jpg"
 };
 
 // =========================
-// FILTRO DE EMOJI (GLOBAL)
+// FUNÇÃO PARA REMOVER EMOJIS
 // =========================
 function removerEmojis(texto) {
-    return texto.replace(
-        /[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu,
-        ""
-    ).trim();
+    return texto.replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, "").trim();
 }
 
 // =========================
-// ENVIO DE TEXTO
+// FUNÇÃO PARA REMOVER ACENTOS
+// =========================
+function removerAcentos(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+// =========================
+// ENVIAR TEXTO
 // =========================
 function enviar(textoManual = null) {
     const input = document.getElementById("texto");
     let textoOriginal = textoManual || input.value.trim();
     if (!textoOriginal) return;
 
-    // Mostra o texto original (com emoji) no chat
     add("Você", textoOriginal, "user");
 
-    // Remove emoji ANTES de ir para API
     const textoLimpo = removerEmojis(textoOriginal);
 
     setAvatar(true);
@@ -155,20 +161,12 @@ function enviar(textoManual = null) {
     })
     .then(res => res.json())
     .then(data => {
-        const resposta =
-            data.resposta ||
-            data.response ||
-            data.msg ||
-            "🌙 Recebi, mas não sei responder agora.";
-
-        // Mostra resposta com possível imagem
-        add("Luna", resposta, "luna");
-
-        // Fala SEM emoji
+        const resposta = data.resposta || data.response || "🌙 Recebi, mas não sei responder agora.";
+        add("Luna", resposta, "luna", textoOriginal); // passamos o texto original para checar imagem
         falar(resposta);
     })
     .catch(() => {
-        add("Luna", "Erro de conexão 😢", "luna");
+        add("Luna", "Erro de conexão 😢", "luna", textoOriginal);
         setAvatar(false);
     });
 
@@ -227,7 +225,7 @@ function falar(texto) {
 
 // =========================
 // AVATAR (ESTADOS)
-// =========================
+ // =========================
 function setAvatar(ativo) {
     const avatar = document.getElementById("avatar");
     const img = document.getElementById("avatarImg");
@@ -242,16 +240,17 @@ function setAvatar(ativo) {
 }
 
 // =========================
-// UI + IMAGENS
+// ADD MENSAGEM + IMAGEM
 // =========================
-function add(nome, texto, cls) {
+function add(nome, texto, cls, userTexto=null) {
     const div = document.createElement("div");
     div.className = "msg " + cls;
 
-    // Verifica palavras-chave de imagens
+    const verificar = removerAcentos(userTexto || texto).toLowerCase();
+
     let encontrouImagem = false;
     for (const key in imagens) {
-        if (texto.toLowerCase().includes(key)) {
+        if (verificar.includes(removerAcentos(key).toLowerCase())) {
             div.innerHTML = `<b>${nome}:</b> ${texto}<br><img class="msg-img" src="${imagens[key]}">`;
             encontrouImagem = true;
             break;
